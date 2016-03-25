@@ -5,7 +5,9 @@ To check out materials, you must first open a member's account.
 === Retrieving a member's account.
 
 . Click on Circulation on the left side of the screen.
-. Enter a portion of the member's last name.  If you have patron barcodes turned on, you may alternatively scan their barcode.
+. Enter a portion of the member's last name.  If you have member barcodes turned on, you may alternatively scan their barcode.
+
+TIP:Anybody with administrator privileges can turn member barcodes on using Tools -> System Settings -> Use Member Barcodes.
 
 === Chcecking out an item
 
