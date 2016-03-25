@@ -12,57 +12,9 @@ You will need MySQL.  Not sure of version.
 
 You will also need Apache.
 
+include::windows.txt[]
 
-== Installing OpenBiblio 1.0 on a Windows computer
+include::linux-shared.txt[]
 
-You can turn your personal Windows computer into an OpenBiblio server.  You will need administrator access to your computer, an Internet connection, and you may also need to check with your local IT experts that you are not behind a restrictive firewall.
-
-Note that turning your personal computer into a server carries some risks, especially if your server is broadcasting across the web instead of just a local network.  We recommend that you run this software on a dedicated computer that does not contain any sensitive or private data.
-
-=== Install prerequisite software
-. Download EasyPHP's Webserver from http://easyphp.org.  We have tested these instructions with version 14.1 of EasyPHP.
-. Agree to the relevant licenses and choose an installation folder that is convenient for you.
-. Once EasyPHP is installed, it will appear as an icon in your system tray. On Windows 7, click on this icon and open the dashboard.
-. The dashboard will open in your default Web browser.  Once it does, click Settings in the top right corner of the screen.
-. Click on HTTP SERVER.  Install and start this service.
-. Click on DB SERVER.  Install and start this service.
-. Go back to the dashboard.
-. Under modules, you should now see an option to administer MySQL through a program called PhpMyAdmin.
-. Open PhpMyAdmin. The default username is root and there is no default password. Click on Users.
-. Click on "Edit Privileges" next to root.
-. Click on "Change Password".
-. Click on Add user.
-. Choose a memorable username, like obiblio, and enter it.  In the host field, enter "localhost".  Create a long, secure, memorable password.
-. Under "Database for user", there should be a checkbox for "Create database with same name and grant all privileges".  Check this box.
-. Click go.
-
-=== Install OpenBiblio
-
-. Open the EasyPHP dashboard.
-. Go to Settings and open the HTTP SERVER settings.
-. Note the Document Root field. This is the folder on your computer where OpenBiblio will be running.
-. Open the DB SERVER settings.  Note the parameters area.
-. Download OpenBiblio and place the files into the Document Root folder.
-. Open the document root folder.
-. Locate the file database_constants_deploy.php. Make a copy of this file called database_constants.php.
-. Edit your new database_constants.php file.  Enter the database, username, and password you created in PhpMyAdmin.  The hostname should be the IP address and port that you noticed in the DB SERVER settings in the format 192.168.333.333:3388, where 192.168.333.333 is the IP address and 3388 is port number.
-. Save the file.
-. Go back to the EasyPHP dashboard and open the HTTP SERVER settings once more.
-. There is a link there to open up OpenBiblio under the URL field.
-. Add /install to the end of the URL in your browser. The installer should run.
-
-=== Using the OpenBiblio installer.
-
-. Install test data if you would like.
-. Log in to your new OpenBiblio system.  The default user is admin with password admin.
-
-== Installing OpenBiblio 1.0 on a shared Linux host
-
-. Create a database using your hosting service's interface.  Note the host, username, password, and database name.
-
-== Installing OpenBiblio 1.0 on a Linux host with full access
-
-This section details the installation process for several Linux distros.
-
-Yaz?
+include::linux.txt[]
 

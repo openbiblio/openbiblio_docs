@@ -1,0 +1,8 @@
+== Installing OpenBiblio 1.0 on a shared Linux host
+
+These instructions will help you set up OpenBiblio on a Web server provided by Dreamhost, Hostgator, or a similar service.
+
+. Create a database using your hosting service's interface.  Note the host, username, password, and database name.
+. Download the Filezilla FTP program
+
+

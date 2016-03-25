@@ -916,10 +916,16 @@ Log in to your new OpenBiblio system.  The default user is admin with password a
 <div class="sect1">
 <h2 id="_installing_openbiblio_1_0_on_a_shared_linux_host">Installing OpenBiblio 1.0 on a shared Linux host</h2>
 <div class="sectionbody">
+<div class="paragraph"><p>These instructions will help you set up OpenBiblio on a Web server provided by Dreamhost, Hostgator, or a similar service.</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
 Create a database using your hosting service&#8217;s interface.  Note the host, username, password, and database name.
+</p>
+</li>
+<li>
+<p>
+Download the Filezilla FTP program
 </p>
 </li>
 </ol></div>
@@ -928,8 +934,35 @@ Create a database using your hosting service&#8217;s interface.  Note the host, 
 <div class="sect1">
 <h2 id="_installing_openbiblio_1_0_on_a_linux_host_with_full_access">Installing OpenBiblio 1.0 on a Linux host with full access</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>This section details the installation process for several Linux distros.</p></div>
-<div class="paragraph"><p>Yaz?</p></div>
+<div class="paragraph"><p>These instructions consist mainly of commands that you can run in your terminal to quickly get a working installation of OpenBiblio.  If you are not comfortable with using the terminal, feel free to use the instructions above for a shared Linux host.</p></div>
+<div class="paragraph"><p>These procedures have been tested on Fedora 21.</p></div>
+<div class="sect2">
+<h3 id="_install_prerequisite_software_2">Install prerequisite software</h3>
+<div class="paragraph"><p>On Fedora 21:</p></div>
+<div class="listingblock">
+<div class="content"></div></div>
+<div class="paragraph"><p>This program will ask you for a current root password, which you may leave blank.  Be sure to give root a new, secure password.  You should also choose to remove anonymous users, disallow root login remotely, and remove the test database.</p></div>
+<div class="listingblock">
+<div class="content"></div></div>
+<div class="paragraph"><p>On Ubuntu:</p></div>
+<div class="listingblock">
+<div class="content"></div></div>
+</div>
+<div class="sect2">
+<h3 id="_using_the_openbiblio_installer_2">Using the OpenBiblio installer.</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Install test data if you would like.
+</p>
+</li>
+<li>
+<p>
+Log in to your new OpenBiblio system.  The default user is admin with password admin.
+</p>
+</li>
+</ol></div>
+</div>
 </div>
 </div>
 </div>
@@ -937,7 +970,7 @@ Create a database using your hosting service&#8217;s interface.  Note the host, 
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2016-03-25 11:18:52 PDT
+ 2016-03-25 12:33:34 PDT
 </div>
 </div>
 </body>
