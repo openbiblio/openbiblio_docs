@@ -1,0 +1,20 @@
+The OpenBiblio Community
+========================
+
+We are happy to welcome to the OpenBiblio Community! You have joined a worldwide group of librarians, developers, community centers.
+
+Getting help
+~~~~~~~~~~~~
+
+You can get help from the mailing list or the sourceforge forums.
+
+
+Reporting bugs
+~~~~~~~~~~~~~~
+
+You can report bugs in the bitbucket repository.
+
+Creating plugins
+~~~~~~~~~~~~~~~~
+
+Instructions coming soon.

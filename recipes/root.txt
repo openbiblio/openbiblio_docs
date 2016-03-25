@@ -1,0 +1,4 @@
+OpenBiblio Recipes
+==================
+
+This is a collection of neat tricks and configurations that might be nice for your library.

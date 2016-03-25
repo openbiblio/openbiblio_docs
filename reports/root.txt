@@ -1,0 +1,15 @@
+= Reports
+
+OpenBiblio has a very flexible report system.
+
+== Running a report
+
+Do it!
+
+=== Exporting to different formats
+
+It seems like PDF isn't working :-(
+
+== Adding new reports
+
+You need access to the server via FTP, RDP, or SSH.

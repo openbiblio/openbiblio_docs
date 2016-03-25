@@ -1,0 +1,30 @@
+OpenBiblio System Administration
+================================
+
+Thanks for being an OpenBiblio system administrator.  We're glad that you are helping your library in this way.
+
+== Configuring the staff interface
+
+This section will describe settings found in the admin menu.
+
+
+== Configuring the OPAC
+
+This section will describe settings found in the admin menu.
+
+== Managing Plugins
+
+This section will describe plugins
+
+
+== Managing the MySQL database
+
+This section will describe the database
+
+== Managing the server
+
+This section will discuss other server-level considerations.
+
+=== Logs
+
+This section will mention logs of particular interest to OpenBiblio administrators.

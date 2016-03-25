@@ -1,0 +1,37 @@
+= Cataloging
+
+OpenBiblio offers several ways to get your materials into your catalog.
+
+== Copy cataloging
+
+. Click Cataloging.
+. Click New Item.
+. Type or scan an ISBN. If you are unable to find any results using an ISBN, you can use the dropdown menus to try other search criteria.
+. If it finds a catalog record from a different library, it will fill in all the fields that it can, based on the media type and information from the other library.
+. Make sure that the call number is correct.
++
+[Note]
+If you are seeing the wrong type of call number (e.g. you see a LoC call number when your library uses Dewey Decimal),
+somebody with admin privileges will need to change the Admin -> Online Options settings.
++
+. Click Submit.
+. Enter copy information as needed. Click Update.
+
+== Original cataloging
+
+Instructions coming soon
+
+== Importing MARC records
+
+By default, the MARC record importer imports items as a "test load,"
+so you can verify that there are no errors.  You can set "test load"
+to false once you are satisfied with your settings and file.
+
+== Importing CSV records
+
+Instructions coming soon.
+
+
+== Bulk delete records
+
+This functionality does not yet exist.

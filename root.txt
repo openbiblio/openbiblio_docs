@@ -1,0 +1,34 @@
+﻿OpenBiblio Documentation
+========================
+
+
+Introduction
+------------
+
+This manual provides documentation for users of OpenBiblio 1.0, an automated library system.
+
+
+About This Documentation
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This documentation uses ASCIIDoc, using a workflow borrowed from the Evergreen ILS Documentation Interest Group.
+
+:leveloffset: +1
+
+include::community/root.txt[]
+
+include::installation/root.txt[]
+
+include::sysadmin/root.txt[]
+
+include::circulation/root.txt[]
+
+include::cataloging/root.txt[]
+
+include::research/root.txt[]
+
+include::reports/root.txt[]
+
+include::recipes/root.txt[]
+
+:leveloffset: -1

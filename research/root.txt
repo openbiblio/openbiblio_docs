@@ -1,0 +1,8 @@
+= Research
+
+OpenBiblio can help with your research.
+
+== DOI search
+
+A DOI (digital object identifier) can refer to an article, journal, digitized archival object, or any other digital object that may help you in your research.  If you have one of these identifiers, you can paste it into the DOI search box, and OpenBiblio will open the relevant resource in a new tab for you.
+
