@@ -749,10 +749,10 @@ asciidoc.install();
 <div class="sect1">
 <h2 id="_the_openbiblio_community">The OpenBiblio Community</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Welcome to the OpenBiblio Community!</p></div>
+<div class="paragraph"><p>We are happy to welcome to the OpenBiblio Community! You have joined a worldwide group of librarians, developers, community centers.</p></div>
 <div class="sect3">
 <h4 id="_getting_help">Getting help</h4>
-<div class="paragraph"><p>You can get help from X</p></div>
+<div class="paragraph"><p>You can get help from the mailing list or the sourceforge forums.</p></div>
 </div>
 <div class="sect3">
 <h4 id="_reporting_bugs">Reporting bugs</h4>
@@ -760,7 +760,7 @@ asciidoc.install();
 </div>
 <div class="sect3">
 <h4 id="_creating_plugins">Creating plugins</h4>
-<div class="paragraph"><p>Please do so</p></div>
+<div class="paragraph"><p>Instructions coming soon.</p></div>
 </div>
 </div>
 </div>
@@ -769,16 +769,191 @@ asciidoc.install();
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_system_requirements">System requirements</h3>
-<div class="paragraph"><p>You need either Windows or Linux.</p></div>
-<div class="paragraph"><p>If you are using a shared hosting Linux, make sure it is using PHP5.</p></div>
+<div class="paragraph"><p>We have tested OpenBiblio installation on Windows 7 and Ubuntu Linux 14.04.</p></div>
+<div class="paragraph"><p>We also plan to test other versions of Windows, Ubuntu Linux 12.04, Debian Linux, Fedora Linux, Mac OSX, and CentOS Linux.</p></div>
+<div class="paragraph"><p>To install OpenBiblio, you will need PHP version 5.4 or higher.  We have not yet tested OpenBiblio on PHP 6.x or 7.x.</p></div>
+<div class="paragraph"><p>You will need MySQL.  Not sure of version.</p></div>
+<div class="paragraph"><p>You will also need Apache.</p></div>
 </div>
 <div class="sect2">
-<h3 id="_installing_prerequisites">Installing prerequisites</h3>
+<h3 id="_installing_openbiblio_1_0_on_a_windows_computer">Installing OpenBiblio 1.0 on a Windows computer</h3>
+<div class="paragraph"><p>You can turn your personal Windows computer into an OpenBiblio server.  You will need administrator access to your computer, an Internet connection, and you may also need to check with your local IT experts that you are not behind a restrictive firewall.</p></div>
+<div class="paragraph"><p>Note that turning your personal computer into a server carries some risks, especially if your server is broadcasting across the web instead of just a local network.  We recommend that you run this software on a dedicated computer that does not contain any sensitive or private data.</p></div>
 <div class="sect3">
-<h4 id="_php">PHP</h4>
-<div class="paragraph"><p>Install PHP on a Windows server.</p></div>
-<div class="paragraph"><p>Install PHP on a Linux server.  Include YAZ.</p></div>
+<h4 id="_install_prerequisite_software">Install prerequisite software</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Download EasyPHP&#8217;s Webserver from <a href="http://easyphp.org">http://easyphp.org</a>.  We have tested these instructions with version 14.1 of EasyPHP.
+</p>
+</li>
+<li>
+<p>
+Agree to the relevant licenses and choose an installation folder that is convenient for you.
+</p>
+</li>
+<li>
+<p>
+Once EasyPHP is installed, it will appear as an icon in your system tray. On Windows 7, click on this icon and open the dashboard.
+</p>
+</li>
+<li>
+<p>
+The dashboard will open in your default Web browser.  Once it does, click Settings in the top right corner of the screen.
+</p>
+</li>
+<li>
+<p>
+Click on HTTP SERVER.  Install and start this service.
+</p>
+</li>
+<li>
+<p>
+Click on DB SERVER.  Install and start this service.
+</p>
+</li>
+<li>
+<p>
+Go back to the dashboard.
+</p>
+</li>
+<li>
+<p>
+Under modules, you should now see an option to administer MySQL through a program called PhpMyAdmin.
+</p>
+</li>
+<li>
+<p>
+Open PhpMyAdmin. The default username is root and there is no default password. Click on Users.
+</p>
+</li>
+<li>
+<p>
+Click on "Edit Privileges" next to root.
+</p>
+</li>
+<li>
+<p>
+Click on "Change Password".
+</p>
+</li>
+<li>
+<p>
+Click on Add user.
+</p>
+</li>
+<li>
+<p>
+Choose a memorable username, like obiblio, and enter it.  In the host field, enter "localhost".  Create a long, secure, memorable password.
+</p>
+</li>
+<li>
+<p>
+Under "Database for user", there should be a checkbox for "Create database with same name and grant all privileges".  Check this box.
+</p>
+</li>
+<li>
+<p>
+Click go.
+</p>
+</li>
+</ol></div>
 </div>
+<div class="sect3">
+<h4 id="_install_openbiblio">Install OpenBiblio</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Open the EasyPHP dashboard.
+</p>
+</li>
+<li>
+<p>
+Go to Settings and open the HTTP SERVER settings.
+</p>
+</li>
+<li>
+<p>
+Note the Document Root field. This is the folder on your computer where OpenBiblio will be running.
+</p>
+</li>
+<li>
+<p>
+Open the DB SERVER settings.  Note the parameters area.
+</p>
+</li>
+<li>
+<p>
+Download OpenBiblio and place the files into the Document Root folder.
+</p>
+</li>
+<li>
+<p>
+Open the document root folder.
+</p>
+</li>
+<li>
+<p>
+Locate the file database_constants_deploy.php. Make a copy of this file called database_constants.php.
+</p>
+</li>
+<li>
+<p>
+Edit your new database_constants.php file.  Enter the database, username, and password you created in PhpMyAdmin.  The hostname should be the IP address and port that you noticed in the DB SERVER settings in the format 192.168.333.333:3388, where 192.168.333.333 is the IP address and 3388 is port number.
+</p>
+</li>
+<li>
+<p>
+Save the file.
+</p>
+</li>
+<li>
+<p>
+Go back to the EasyPHP dashboard and open the HTTP SERVER settings once more.
+</p>
+</li>
+<li>
+<p>
+There is a link there to open up OpenBiblio under the URL field.
+</p>
+</li>
+<li>
+<p>
+Add /install to the end of the URL in your browser. The installer should run.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect3">
+<h4 id="_using_the_openbiblio_installer">Using the OpenBiblio installer.</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Install test data if you would like.
+</p>
+</li>
+<li>
+<p>
+Log in to your new OpenBiblio system.  The default user is admin with password admin.
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_installing_openbiblio_1_0_on_a_shared_linux_host">Installing OpenBiblio 1.0 on a shared Linux host</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Create a database using your hosting service&#8217;s interface.  Note the host, username, password, and database name.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect2">
+<h3 id="_installing_openbiblio_1_0_on_a_linux_host_with_full_access">Installing OpenBiblio 1.0 on a Linux host with full access</h3>
+<div class="paragraph"><p>This section details the installation process for several Linux distros.</p></div>
+<div class="paragraph"><p>Yaz?</p></div>
 </div>
 </div>
 </div>
@@ -786,6 +961,30 @@ asciidoc.install();
 <h2 id="_openbiblio_system_administration">OpenBiblio System Administration</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Thanks for being an OpenBiblio system administrator.  We&#8217;re glad that you are helping your library in this way.</p></div>
+<div class="sect2">
+<h3 id="_configuring_the_staff_interface">Configuring the staff interface</h3>
+<div class="paragraph"><p>This section will describe settings found in the admin menu.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_the_opac">Configuring the OPAC</h3>
+<div class="paragraph"><p>This section will describe settings found in the admin menu.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_managing_plugins">Managing Plugins</h3>
+<div class="paragraph"><p>This section will describe plugins</p></div>
+</div>
+<div class="sect2">
+<h3 id="_managing_the_mysql_database">Managing the MySQL database</h3>
+<div class="paragraph"><p>This section will describe the database</p></div>
+</div>
+<div class="sect2">
+<h3 id="_managing_the_server">Managing the server</h3>
+<div class="paragraph"><p>This section will discuss other server-level considerations.</p></div>
+<div class="sect3">
+<h4 id="_logs">Logs</h4>
+<div class="paragraph"><p>This section will mention logs of particular interest to OpenBiblio administrators.</p></div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -794,10 +993,32 @@ asciidoc.install();
 <div class="paragraph"><p>The circulation module is the heart of the OpenBiblio system.</p></div>
 <div class="sect2">
 <h3 id="_checking_out_materials">Checking out materials</h3>
-<div class="paragraph"><p>First you need to get to a member&#8217;s account, then you can actually check the items out.</p></div>
+<div class="paragraph"><p>To check out materials, you must first open a member&#8217;s account.</p></div>
 <div class="sect3">
-<h4 id="_retrieve_a_member_8217_s_account">Retrieve a member&#8217;s account</h4>
-<div class="paragraph"><p>You can retrieve by last name or barcode, depending on your settings.</p></div>
+<h4 id="_retrieving_a_member_8217_s_account">Retrieving a member&#8217;s account.</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Click on Circulation on the left side of the screen.
+</p>
+</li>
+<li>
+<p>
+Enter a portion of the member&#8217;s last name.  If you have patron barcodes turned on, you may alternatively scan their barcode.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect3">
+<h4 id="_chcecking_out_an_item">Chcecking out an item</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Type or scan the item barcode into the Check Out field.
+</p>
+</li>
+</ol></div>
+<div class="paragraph"><p>Something about due dates, etc.</p></div>
 </div>
 </div>
 <div class="sect2">
@@ -828,12 +1049,20 @@ If the book was checked out, it will be added to the shelving cart, which is rep
 <div class="paragraph"><p>How do you empty the shelving cart?</p></div>
 <div class="paragraph"><p>What if there is a hold or fines on the item?</p></div>
 </div>
+<div class="sect2">
+<h3 id="_holds">Holds</h3>
+<div class="paragraph"><p>You can place holds on items so you can check them out at a later time.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_bookings">Bookings</h3>
+<div class="paragraph"><p>You can also book certain items</p></div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_cataloging">Cataloging</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>Cataloging is fun!</p></div>
+<div class="paragraph"><p>OpenBiblio offers several ways to get your materials into your catalog.</p></div>
 <div class="sect2">
 <h3 id="_copy_cataloging">Copy cataloging</h3>
 <div class="olist arabic"><ol class="arabic">
@@ -878,15 +1107,17 @@ Enter copy information as needed. Click Update.
 </div>
 <div class="sect2">
 <h3 id="_original_cataloging">Original cataloging</h3>
-<div class="paragraph"><p>Very fun</p></div>
+<div class="paragraph"><p>Instructions coming soon</p></div>
 </div>
 <div class="sect2">
 <h3 id="_importing_marc_records">Importing MARC records</h3>
-<div class="paragraph"><p>SO fun</p></div>
+<div class="paragraph"><p>By default, the MARC record importer imports items as a "test load,"
+so you can verify that there are no errors.  You can set "test load"
+to false once you are satisfied with your settings and file.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_importing_csv_records">Importing CSV records</h3>
-<div class="paragraph"><p>No way</p></div>
+<div class="paragraph"><p>Instructions coming soon.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_bulk_delete_records">Bulk delete records</h3>
@@ -897,13 +1128,29 @@ Enter copy information as needed. Click Update.
 <div class="sect1">
 <h2 id="_research">Research</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>OpenBiblio can help with your research</p></div>
+<div class="paragraph"><p>OpenBiblio can help with your research.</p></div>
+<div class="sect2">
+<h3 id="_doi_search">DOI search</h3>
+<div class="paragraph"><p>A DOI (digital object identifier) can refer to an article, journal, digitized archival object, or any other digital object that may help you in your research.  If you have one of these identifiers, you can paste it into the DOI search box, and OpenBiblio will open the relevant resource in a new tab for you.</p></div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_reports">Reports</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>OpenBiblio has a very flexible report system.</p></div>
+<div class="sect2">
+<h3 id="_running_a_report">Running a report</h3>
+<div class="paragraph"><p>Do it!</p></div>
+<div class="sect3">
+<h4 id="_exporting_to_different_formats">Exporting to different formats</h4>
+<div class="paragraph"><p>It seems like PDF isn&#8217;t working :-(</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adding_new_reports">Adding new reports</h3>
+<div class="paragraph"><p>You need access to the server via FTP, RDP, or SSH.</p></div>
+</div>
 </div>
 </div>
 <div class="sect1">
