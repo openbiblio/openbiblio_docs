@@ -21,6 +21,14 @@ somebody with admin privileges will need to change the Admin -> Online Options s
 
 Instructions coming soon
 
+=== Special subfields
+
+Three subfields display somewhat differently than usual.
+
+* Field 024 $a (identifier) is assumed to be a DOI, so it displays as a link to that digital object.
+* Field 505 $a (contents) is typically very long, so it displays as a scrollable text field.
+* Field 856 $u (URL - included by default in the ebook and web site material types) displays as a hyperlink.
+
 == Importing MARC records
 
 By default, the MARC record importer imports items as a "test load,"

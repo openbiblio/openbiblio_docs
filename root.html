@@ -727,13 +727,17 @@ install: function(toclevels) {
 }
 
 }
-asciidoc.install();
+asciidoc.install(2);
 /*]]>*/
 </script>
 </head>
 <body class="article">
 <div id="header">
 <h1>OpenBiblio Documentation</h1>
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
@@ -959,18 +963,126 @@ Download the Filezilla FTP program
 <div class="sect2">
 <h3 id="_installing_openbiblio_1_0_on_a_linux_host_with_full_access">Installing OpenBiblio 1.0 on a Linux host with full access</h3>
 <div class="paragraph"><p>These instructions consist mainly of commands that you can run in your terminal to quickly get a working installation of OpenBiblio.  If you are not comfortable with using the terminal, feel free to use the instructions above for a shared Linux host.</p></div>
-<div class="paragraph"><p>These procedures have been tested on Fedora 21.</p></div>
+<div class="paragraph"><p>These procedures have been tested on Fedora 21 and Ubuntu 14.04.</p></div>
 <div class="sect3">
 <h4 id="_install_prerequisite_software_2">Install prerequisite software</h4>
-<div class="paragraph"><p>On Fedora 21:</p></div>
-<div class="listingblock">
-<div class="content"></div></div>
-<div class="paragraph"><p>This program will ask you for a current root password, which you may leave blank.  Be sure to give root a new, secure password.  You should also choose to remove anonymous users, disallow root login remotely, and remove the test database.</p></div>
-<div class="listingblock">
-<div class="content"></div></div>
+<div class="paragraph"><p>OpenBiblio requires apache, PHP, and MySQL.  If you intend to copy catalog records from other libraries, we strongly recommend that you use yaz.  The following steps include a YAZ install.</p></div>
 <div class="paragraph"><p>On Ubuntu:</p></div>
 <div class="listingblock">
-<div class="content"></div></div>
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>sudo apt-get install apache2 php5 mysql-server yaz php5-dev php5-mysql php-pear libyaz-<span style="color: #993399">4</span> unzip</tt></pre></div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">This will prompt you to choose a root password for MySQL.  Make sure it is a secure one!</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>On Fedora 21:</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>sudo yum install httpd php mysql-server php-devel php-mysql php-pear unzip yaz libyaz-devel gcc
+sudo mysql_secure_installation</tt></pre></div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">mysql_secure_installation will ask you for a current root password, which you may leave blank.  Be sure to give root a new, secure password.  You should also choose to remove anonymous users, disallow root login remotely, and remove the test database.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_install_yaz_optional">Install yaz (optional)</h4>
+<div class="paragraph"><p>Next, install yaz as a PHP extension using pecl.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>sudo pecl install yaz</tt></pre></div></div>
+<div class="paragraph"><p>Add a new line to your php.ini file.  This file can be found at /etc/php/php.ini
+in Fedora and /etc/php5/apache/php/ini in Ubuntu.  The line should be something
+like the following:</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>extension<span style="color: #990000">=</span>yaz<span style="color: #990000">.</span>so</tt></pre></div></div>
+</div>
+<div class="sect3">
+<h4 id="_start_the_apache_and_mysql_services">Start the Apache and MySQL services</h4>
+<div class="paragraph"><p>On Fedora 21:</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>sudo service httpd start
+sudo service mysqld start</tt></pre></div></div>
+<div class="paragraph"><p>On Ubuntu:</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>sudo service apache2 start
+sudo service mysql start</tt></pre></div></div>
+</div>
+<div class="sect3">
+<h4 id="_create_a_mysql_database">Create a MySQL database</h4>
+<div class="paragraph"><p>First, open up MySQL.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>mysql -uroot -p <span style="font-style: italic"><span style="color: #9A1900">#MySQL will ask you for the root password you just created</span></span></tt></pre></div></div>
+<div class="paragraph"><p>Next, type the following commands to create a user and database for
+OpenBiblio to use.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">CREATE</span></span> <span style="font-weight: bold"><span style="color: #0000FF">DATABASE</span></span> obiblio<span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #0000FF">GRANT</span></span> <span style="font-weight: bold"><span style="color: #0000FF">ALL</span></span> PRIVILEGES <span style="font-weight: bold"><span style="color: #0000FF">ON</span></span> obiblio<span style="color: #990000">.*</span> <span style="font-weight: bold"><span style="color: #0000FF">TO</span></span> obib_user@localhost <span style="font-weight: bold"><span style="color: #0000FF">IDENTIFIED</span></span> <span style="font-weight: bold"><span style="color: #0000FF">BY</span></span> <span style="color: #FF0000">'obib_password'</span><span style="color: #990000">;</span></tt></pre></div></div>
+</div>
+<div class="sect3">
+<h4 id="_prepare_openbiblio_for_its_installation">Prepare OpenBiblio for its installation</h4>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>wget -O obib<span style="color: #990000">.</span>zip https<span style="color: #990000">:</span>//bitbucket<span style="color: #990000">.</span>org/mstetson/obiblio-<span style="color: #993399">1.0</span>-wip/get<span style="color: #990000">/</span>26f88507b580<span style="color: #990000">.</span>zip
+unzip obib<span style="color: #990000">.</span>zip
+cd new-obib-dir
+cp database_constants_deploy<span style="color: #990000">.</span>php database_constants<span style="color: #990000">.</span>php</tt></pre></div></div>
+<div class="paragraph"><p>Edit database_constants.php with the text editor of your choice.</p></div>
+<div class="paragraph"><p>Delete the default "It Works" page from /var/www/html.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>sudo mv <span style="color: #990000">./*</span> /var/www/html<span style="color: #990000">/</span></tt></pre></div></div>
+<div class="paragraph"><p>On Fedora 21, you may need to run the following command to configure SeLinux to
+allow access to the folder.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>restorecon -r /var/www/html</tt></pre></div></div>
 </div>
 <div class="sect3">
 <h4 id="_using_the_openbiblio_installer_2">Using the OpenBiblio installer.</h4>
@@ -1149,6 +1261,27 @@ Enter copy information as needed. Click Update.
 <div class="sect2">
 <h3 id="_original_cataloging">Original cataloging</h3>
 <div class="paragraph"><p>Instructions coming soon</p></div>
+<div class="sect3">
+<h4 id="_special_subfields">Special subfields</h4>
+<div class="paragraph"><p>Three subfields display somewhat differently than usual.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Field 024 $a (identifier) is assumed to be a DOI, so it displays as a link to that digital object.
+</p>
+</li>
+<li>
+<p>
+Field 505 $a (contents) is typically very long, so it displays as a scrollable text field.
+</p>
+</li>
+<li>
+<p>
+Field 856 $u (URL - included by default in the ebook and web site material types) displays as a hyperlink.
+</p>
+</li>
+</ul></div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_importing_marc_records">Importing MARC records</h3>

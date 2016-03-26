@@ -727,13 +727,17 @@ install: function(toclevels) {
 }
 
 }
-asciidoc.install();
+asciidoc.install(2);
 /*]]>*/
 </script>
 </head>
 <body class="article">
 <div id="header">
 <h1>Cataloging</h1>
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
@@ -789,6 +793,27 @@ Enter copy information as needed. Click Update.
 <h2 id="_original_cataloging">Original cataloging</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Instructions coming soon</p></div>
+<div class="sect2">
+<h3 id="_special_subfields">Special subfields</h3>
+<div class="paragraph"><p>Three subfields display somewhat differently than usual.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Field 024 $a (identifier) is assumed to be a DOI, so it displays as a link to that digital object.
+</p>
+</li>
+<li>
+<p>
+Field 505 $a (contents) is typically very long, so it displays as a scrollable text field.
+</p>
+</li>
+<li>
+<p>
+Field 856 $u (URL - included by default in the ebook and web site material types) displays as a hyperlink.
+</p>
+</li>
+</ul></div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -816,7 +841,7 @@ to false once you are satisfied with your settings and file.</p></div>
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2016-03-25 11:34:15 PDT
+ 2016-03-26 13:09:24 PDT
 </div>
 </div>
 </body>

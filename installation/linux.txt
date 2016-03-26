@@ -2,43 +2,113 @@
 
 These instructions consist mainly of commands that you can run in your terminal to quickly get a working installation of OpenBiblio.  If you are not comfortable with using the terminal, feel free to use the instructions above for a shared Linux host.
 
-These procedures have been tested on Fedora 21.
+These procedures have been tested on Fedora 21 and Ubuntu 14.04.
 
 === Install prerequisite software
+
+OpenBiblio requires apache, PHP, and MySQL.  If you intend to copy catalog records from other libraries, we strongly recommend that you use yaz.  The following steps include a YAZ install.
+
+On Ubuntu:
+
+[source,bash]
+----
+sudo apt-get install apache2 php5 mysql-server yaz php5-dev php5-mysql php-pear libyaz-4 unzip
+----
+
+TIP: This will prompt you to choose a root password for MySQL.  Make sure it is a secure one!
+
 
 On Fedora 21:
 
 [source,bash]
 ----
 sudo yum install httpd php mysql-server php-devel php-mysql php-pear unzip yaz libyaz-devel gcc
-sudo pecl install yaz
-# Add a new lie extension=yaz.so to the file /etc/php/php.ini
-sudo service httpd start
-sudo service mysqld start
 sudo mysql_secure_installation
 ----
 
-This program will ask you for a current root password, which you may leave blank.  Be sure to give root a new, secure password.  You should also choose to remove anonymous users, disallow root login remotely, and remove the test database.
+TIP: mysql_secure_installation will ask you for a current root password, which you may leave blank.  Be sure to give root a new, secure password.  You should also choose to remove anonymous users, disallow root login remotely, and remove the test database.
+
+=== Install yaz (optional)
+
+Next, install yaz as a PHP extension using pecl.
 
 [source,bash]
 ----
-mysql -uroot -p #MySQL will ask you for the root password you just created
-CREATE DATABASE obiblio;
-GRANT ALL PRIVILEGES ON obiblio.* TO obib_user@localhost IDENTIFIED BY 'obib_password';
-CTRL + D # pressing these keys together will return you to the typical shell prompt
-wget https://bitbucket.org/mstetson/obiblio-1.0-wip/get/26f88507b580.zip
-unzip 26f88507b580.zip
-cp # copy the db constants file
-sudo mv mstetson/* /var/www/html
-restorecon -r /var/www/html
+sudo pecl install yaz
+----
+
+Add a new line to your php.ini file.  This file can be found at /etc/php/php.ini
+in Fedora and /etc/php5/apache/php/ini in Ubuntu.  The line should be something
+like the following:
+
+[source,perl]
+----
+extension=yaz.so
+----
+
+=== Start the Apache and MySQL services
+
+On Fedora 21:
+
+[source,bash]
+----
+sudo service httpd start
+sudo service mysqld start
 ----
 
 On Ubuntu:
 
 [source,bash]
 ----
-echo
+sudo service apache2 start
+sudo service mysql start
 ----
+
+=== Create a MySQL database
+
+First, open up MySQL.
+
+[source,bash]
+----
+mysql -uroot -p #MySQL will ask you for the root password you just created
+----
+
+Next, type the following commands to create a user and database for
+OpenBiblio to use.
+
+[source,sql]
+----
+CREATE DATABASE obiblio;
+GRANT ALL PRIVILEGES ON obiblio.* TO obib_user@localhost IDENTIFIED BY 'obib_password';
+----
+
+=== Prepare OpenBiblio for its installation
+
+[source,bash]
+----
+wget -O obib.zip https://bitbucket.org/mstetson/obiblio-1.0-wip/get/26f88507b580.zip
+unzip obib.zip
+cd new-obib-dir
+cp database_constants_deploy.php database_constants.php
+----
+
+Edit database_constants.php with the text editor of your choice.
+
+Delete the default "It Works" page from /var/www/html.
+
+[source,bash]
+----
+sudo mv ./* /var/www/html/
+----
+
+On Fedora 21, you may need to run the following command to configure SeLinux to
+allow access to the folder.
+
+[source,bash]
+----
+restorecon -r /var/www/html
+----
+
 
 include::obib-installer.txt[]
 
