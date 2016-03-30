@@ -12,10 +12,7 @@ This section will describe settings found in the admin menu.
 
 This section will describe settings found in the admin menu.
 
-== Managing Plugins
-
-This section will describe plugins
-
+include::plugins.txt[]
 
 == Managing the MySQL database
 

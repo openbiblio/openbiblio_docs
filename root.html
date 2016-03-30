@@ -1115,8 +1115,84 @@ Log in to your new OpenBiblio system.  The default user is admin with password a
 <div class="paragraph"><p>This section will describe settings found in the admin menu.</p></div>
 </div>
 <div class="sect2">
-<h3 id="_managing_plugins">Managing Plugins</h3>
-<div class="paragraph"><p>This section will describe plugins</p></div>
+<h3 id="_managing_plugins">Managing plugins</h3>
+<div class="paragraph"><p>OpenBiblio has a very flexible plugin system.</p></div>
+<div class="sect3">
+<h4 id="_creating_a_new_plugin">Creating a new plugin</h4>
+<div class="paragraph"><p>This requires basic PHP skills and access to the files.</p></div>
+<div class="sect4">
+<h5 id="_design_the_plugin">Design the plugin</h5>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Create a new directory that begins with the word plugin, followed by an underscore, followed by the name of your plugin.  In UNIX systems, you might type something like this:
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>mkdir plugin_excitingPlugin</tt></pre></div></div>
+</li>
+<li>
+<p>
+If you need to include custom CSS or JS, add it to a file called custom_head.php in this new directory.
+</p>
+</li>
+<li>
+<p>
+Create the PHP files you need.  These can be called anything you want, but we recommend that your naming conventions are pretty similar to the rest of the OpenBiblio code.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect4">
+<h5 id="_add_your_plugin_to_the_openbiblio_menu">Add your plugin to the OpenBiblio menu</h5>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Create a new directory inside the plugins directory with the name of your plugin.  In UNIX systems, you might type something like this:
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>mkdir plugins/excitingPlugin</tt></pre></div></div>
+</li>
+<li>
+<p>
+Create a file within this new directory called nav.nav
+</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #990000">&lt;?php</span>
+Nav<span style="color: #990000">::</span><span style="font-weight: bold"><span style="color: #000000">node</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'tools/excitingPlugin'</span><span style="color: #990000">,</span> <span style="color: #FF0000">'Exciting Plugin'</span><span style="color: #990000">,</span> <span style="color: #FF0000">'../plugin_excitingPlugin/excitingPluginForms.php'</span><span style="color: #990000">);</span></tt></pre></div></div>
+</li>
+<li>
+<p>
+If you&#8217;d like to use Obib&#8217;s localization framework but need to localize some more terms, create a file called tran.tran. You can use this to add new terms to your locale.
+</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">Plugins already have all of the exciting localization ability built in.  However, note that you cannot override localized term definitions within tran.tran.</td>
+</tr></table>
+</div>
+</li>
+<li>
+<p>
+Turn on your plugin
+</p>
+</li>
+</ol></div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_managing_the_mysql_database">Managing the MySQL database</h3>
