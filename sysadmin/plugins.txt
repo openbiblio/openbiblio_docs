@@ -1,0 +1,44 @@
+== Managing plugins
+
+OpenBiblio has a very flexible plugin system.
+
+
+=== Creating a new plugin
+
+This requires basic PHP skills and access to the files.
+
+==== Design the plugin
+
+. Create a new directory that begins with the word plugin, followed by an underscore, followed by the name of your plugin.  In UNIX systems, you might type something like this:
++
+[source,bash]
+----
+mkdir plugin_excitingPlugin
+----
++
+. If you need to include custom CSS or JS, add it to a file called custom_head.php in this new directory.
+. Create the PHP files you need.  These can be called anything you want, but we recommend that your naming conventions are pretty similar to the rest of the OpenBiblio code.
+
+
+==== Add your plugin to the OpenBiblio menu
+
+. Create a new directory inside the plugins directory with the name of your plugin.  In UNIX systems, you might type something like this:
++
+[source,bash]
+----
+mkdir plugins/excitingPlugin
+----
++
+. Create a file within this new directory called nav.nav
++
+[source,php]
+----
+<?php
+Nav::node('tools/excitingPlugin', 'Exciting Plugin', '../plugin_excitingPlugin/excitingPluginForms.php');
+----
++
+. If you'd like to use Obib's localization framework but need to localize some more terms, create a file called tran.tran. You can use this to add new terms to your locale.
++
+TIP: Plugins already have all of the exciting localization ability built in.  However, note that you cannot override localized term definitions within tran.tran.
++
+. Turn on your plugin
