@@ -1,0 +1,4 @@
+=== Using the OpenBiblio installer.
+
+. Install test data if you would like.
+. Log in to your new OpenBiblio system.  The default user is admin with password admin.

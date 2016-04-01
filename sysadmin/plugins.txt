@@ -19,6 +19,47 @@ mkdir plugin_excitingPlugin
 . If you need to include custom CSS or JS, add it to a file called custom_head.php in this new directory.
 . Create the PHP files you need.  These can be called anything you want, but we recommend that your naming conventions are pretty similar to the rest of the OpenBiblio code.
 
+===== Create a plugin server
+
+Your plugin's server -- located at `plugin_excitingPlugin/excitingSrvr.php` -- is responsible
+for three tasks:
+
+. Performing any actions the user requests.
+. Obtaining any relevant data from the database, file structure, or external API.
+. Displaying the relevant data to the user in a nice HTML format.
+
+A basic plugin server consists of a require statement to get the necessary data and methods and a 
+switch statement to take care of the `$_REQUEST['mode']` variable. Here's a simple example:
+
+[source,php]
+----
+<?php
+	require_once('../shared/common.php');
+	switch ($_REQUEST['mode']){
+		case 'exciting':
+			echo 'This plugin is very exciting.';
+			break;
+		case 'boring':
+			echo 'This plugin is pretty boring.';
+			break;
+		default:
+			echo T('invalid mode');
+			break;
+	}
+----
+
+If you would like to access data from the database, you should require the appropriate model from the
+model directory.  For example, if you'd like to use the Biblios model, you would include this in your
+plugin_excitingPlugin/excitingSrvr.php:
+
+[source,php]
+----
+require_once('../model/Biblios.php');
+$bib = new Biblios;
+----
+
+You can then access all those great methods and data through the `$bib` object.
+
 
 ==== Add your plugin to the OpenBiblio menu
 
@@ -40,5 +81,7 @@ Nav::node('tools/excitingPlugin', 'Exciting Plugin', '../plugin_excitingPlugin/e
 . If you'd like to use Obib's localization framework but need to localize some more terms, create a file called tran.tran. You can use this to add new terms to your locale.
 +
 TIP: Plugins already have all of the exciting localization ability built in.  However, note that you cannot override localized term definitions within tran.tran.
+
+WARNING: There is not yet a place to specify localized terms for plugins.
 +
-. Turn on your plugin
+. Turn on your plugin using Tools -> Plugin Manager.
