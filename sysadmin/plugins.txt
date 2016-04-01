@@ -17,7 +17,7 @@ mkdir plugin_excitingPlugin
 ----
 +
 . If you need to include custom CSS or JS, add it to a file called custom_head.php in this new directory.
-. Create the PHP files you need.  These can be called anything you want, but we recommend that your naming conventions are pretty similar to the rest of the OpenBiblio code.
+. Create three PHP files in the directory: a JS file, a Srvr file, and a Forms file.
 
 ===== Create a plugin server
 
@@ -85,3 +85,4 @@ TIP: Plugins already have all of the exciting localization ability built in.  Ho
 WARNING: There is not yet a place to specify localized terms for plugins.
 +
 . Turn on your plugin using Tools -> Plugin Manager.
+
