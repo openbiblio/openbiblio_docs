@@ -1,6 +1,28 @@
 = Cataloging
 
-OpenBiblio offers several ways to get your materials into your catalog.
+OpenBiblio offers several ways to get your materials into your catalog and to manage the records you have entered.
+
+== Orientation to OpenBiblio cataloging
+
+OpenBiblio uses the MARC format as the basis for the catalog, but its editing interfaces display human-readable field labels,
+rather than specific numeric MARC tags.
+
+OpenBiblio's use of MARC is pretty standard, but there are a few specific ways it treats certain fields.
+
+=== Call numbers
+
+OpenBiblio's Call Number searches search only 099$a, which is the local call number field.  However, if you'd like to add call numbers from other fields, you can enable the Call Number Utilities plugin, which allows you to populate the 099$a fields with data from other
+call number fields to make them searchable.
+
+
+=== Special subfields
+
+Three subfields display somewhat differently than usual.
+
+* Field 024 $a (identifier) is assumed to be a DOI, so it displays as a link to that digital object.
+* Field 505 $a (contents) is typically very long, so it displays as a scrollable text field.
+* Field 856 $u (URL - included by default in the ebook and web site material types) displays as a hyperlink.
+
 
 == Copy cataloging
 
@@ -20,14 +42,6 @@ somebody with admin privileges will need to change the Admin -> Online Options s
 == Original cataloging
 
 Instructions coming soon
-
-=== Special subfields
-
-Three subfields display somewhat differently than usual.
-
-* Field 024 $a (identifier) is assumed to be a DOI, so it displays as a link to that digital object.
-* Field 505 $a (contents) is typically very long, so it displays as a scrollable text field.
-* Field 856 $u (URL - included by default in the ebook and web site material types) displays as a hyperlink.
 
 == Importing MARC records
 
