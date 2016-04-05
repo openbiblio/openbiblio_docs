@@ -742,7 +742,41 @@ asciidoc.install(2);
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph"><p>OpenBiblio offers several ways to get your materials into your catalog.</p></div>
+<div class="paragraph"><p>OpenBiblio offers several ways to get your materials into your catalog and to manage the records you have entered.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_orientation_to_openbiblio_cataloging">Orientation to OpenBiblio cataloging</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>OpenBiblio uses the MARC format as the basis for the catalog, but its editing interfaces display human-readable field labels,
+rather than specific numeric MARC tags.</p></div>
+<div class="paragraph"><p>OpenBiblio&#8217;s use of MARC is pretty standard, but there are a few specific ways it treats certain fields.</p></div>
+<div class="sect2">
+<h3 id="_call_numbers">Call numbers</h3>
+<div class="paragraph"><p>OpenBiblio&#8217;s Call Number searches search only 099$a, which is the local call number field.  However, if you&#8217;d like to add call numbers from other fields, you can enable the Call Number Utilities plugin, which allows you to populate the 099$a fields with data from other
+call number fields to make them searchable.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_special_subfields">Special subfields</h3>
+<div class="paragraph"><p>Three subfields display somewhat differently than usual.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Field 024 $a (identifier) is assumed to be a DOI, so it displays as a link to that digital object.
+</p>
+</li>
+<li>
+<p>
+Field 505 $a (contents) is typically very long, so it displays as a scrollable text field.
+</p>
+</li>
+<li>
+<p>
+Field 856 $u (URL - included by default in the ebook and web site material types) displays as a hyperlink.
+</p>
+</li>
+</ul></div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -793,27 +827,6 @@ Enter copy information as needed. Click Update.
 <h2 id="_original_cataloging">Original cataloging</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Instructions coming soon</p></div>
-<div class="sect2">
-<h3 id="_special_subfields">Special subfields</h3>
-<div class="paragraph"><p>Three subfields display somewhat differently than usual.</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Field 024 $a (identifier) is assumed to be a DOI, so it displays as a link to that digital object.
-</p>
-</li>
-<li>
-<p>
-Field 505 $a (contents) is typically very long, so it displays as a scrollable text field.
-</p>
-</li>
-<li>
-<p>
-Field 856 $u (URL - included by default in the ebook and web site material types) displays as a hyperlink.
-</p>
-</li>
-</ul></div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -841,7 +854,7 @@ to false once you are satisfied with your settings and file.</p></div>
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2016-03-26 13:09:24 PDT
+ 2016-04-02 15:09:17 PDT
 </div>
 </div>
 </body>

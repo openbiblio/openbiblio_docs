@@ -1107,8 +1107,28 @@ Log in to your new OpenBiblio system.  The default user is admin with password a
 <div class="sectionbody">
 <div class="paragraph"><p>Thanks for being an OpenBiblio system administrator.  We&#8217;re glad that you are helping your library in this way.</p></div>
 <div class="sect2">
-<h3 id="_configuring_the_staff_interface">Configuring the staff interface</h3>
-<div class="paragraph"><p>This section will describe settings found in the admin menu.</p></div>
+<h3 id="_managing_your_users">Managing your users</h3>
+<div class="paragraph"><p>To add a new staff member, go to Admin &#8594; Staff Admin.  Click on the "Add New" button,
+found both at the top and bottom of this screen.  You can then assign a username, password,
+name, and permission set to your staff member.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">You must assign at least one permission, or the staff member will not be able to log in.</td>
+</tr></table>
+</div>
+<div class="sect3">
+<h4 id="_working_with_passwords">Working with passwords</h4>
+<div class="paragraph"><p>Openbiblio&#8217;s password management system is very straightforward.  Users with
+Admin permission are able to change their own password or the password of any
+other staff account (including other administrators).  Users without the Admin
+permission may not change anybody&#8217;s password, not even their own.</p></div>
+<div class="paragraph"><p>To change the password of a staff account, go to Admin &#8594; Staff Admin. Click
+the pwd button next to the account you are working with.  Enter the new
+password.</p></div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_configuring_the_opac">Configuring the OPAC</h3>
@@ -1346,7 +1366,39 @@ If the book was checked out, it will be added to the shelving cart, which is rep
 <div class="sect1">
 <h2 id="_cataloging">Cataloging</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>OpenBiblio offers several ways to get your materials into your catalog.</p></div>
+<div class="paragraph"><p>OpenBiblio offers several ways to get your materials into your catalog and to manage the records you have entered.</p></div>
+<div class="sect2">
+<h3 id="_orientation_to_openbiblio_cataloging">Orientation to OpenBiblio cataloging</h3>
+<div class="paragraph"><p>OpenBiblio uses the MARC format as the basis for the catalog, but its editing interfaces display human-readable field labels,
+rather than specific numeric MARC tags.</p></div>
+<div class="paragraph"><p>OpenBiblio&#8217;s use of MARC is pretty standard, but there are a few specific ways it treats certain fields.</p></div>
+<div class="sect3">
+<h4 id="_call_numbers">Call numbers</h4>
+<div class="paragraph"><p>OpenBiblio&#8217;s Call Number searches search only 099$a, which is the local call number field.  However, if you&#8217;d like to add call numbers from other fields, you can enable the Call Number Utilities plugin, which allows you to populate the 099$a fields with data from other
+call number fields to make them searchable.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_special_subfields">Special subfields</h4>
+<div class="paragraph"><p>Three subfields display somewhat differently than usual.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Field 024 $a (identifier) is assumed to be a DOI, so it displays as a link to that digital object.
+</p>
+</li>
+<li>
+<p>
+Field 505 $a (contents) is typically very long, so it displays as a scrollable text field.
+</p>
+</li>
+<li>
+<p>
+Field 856 $u (URL - included by default in the ebook and web site material types) displays as a hyperlink.
+</p>
+</li>
+</ul></div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_copy_cataloging">Copy cataloging</h3>
 <div class="olist arabic"><ol class="arabic">
@@ -1392,27 +1444,6 @@ Enter copy information as needed. Click Update.
 <div class="sect2">
 <h3 id="_original_cataloging">Original cataloging</h3>
 <div class="paragraph"><p>Instructions coming soon</p></div>
-<div class="sect3">
-<h4 id="_special_subfields">Special subfields</h4>
-<div class="paragraph"><p>Three subfields display somewhat differently than usual.</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Field 024 $a (identifier) is assumed to be a DOI, so it displays as a link to that digital object.
-</p>
-</li>
-<li>
-<p>
-Field 505 $a (contents) is typically very long, so it displays as a scrollable text field.
-</p>
-</li>
-<li>
-<p>
-Field 856 $u (URL - included by default in the ebook and web site material types) displays as a hyperlink.
-</p>
-</li>
-</ul></div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_importing_marc_records">Importing MARC records</h3>
