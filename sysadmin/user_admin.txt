@@ -1,0 +1,7 @@
+== Managing your users
+
+To add a new staff member, go to Admin -> Staff Admin.  Click on the "Add New" button,
+found both at the top and bottom of this screen.  You can then assign a username, password,
+name, and permission set to your staff member.
+
+WARNING: You must assign at least one permission, or the staff member will not be able to log in.

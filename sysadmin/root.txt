@@ -3,10 +3,7 @@ OpenBiblio System Administration
 
 Thanks for being an OpenBiblio system administrator.  We're glad that you are helping your library in this way.
 
-== Configuring the staff interface
-
-This section will describe settings found in the admin menu.
-
+include::user_admin.txt[]
 
 == Configuring the OPAC
 
