@@ -5,3 +5,15 @@ found both at the top and bottom of this screen.  You can then assign a username
 name, and permission set to your staff member.
 
 WARNING: You must assign at least one permission, or the staff member will not be able to log in.
+
+=== Working with passwords
+
+Openbiblio's password management system is very straightforward.  Users with 
+Admin permission are able to change their own password or the password of any 
+other staff account (including other administrators).  Users without the Admin
+permission may not change anybody's password, not even their own.
+
+To change the password of a staff account, go to Admin -> Staff Admin. Click
+the pwd button next to the account you are working with.  Enter the new
+password.
+
