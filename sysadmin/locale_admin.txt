@@ -1,0 +1,41 @@
+== Managing locales
+
+OpenBiblio can be translated into any language that you wish!
+
+
+=== Creating a new locale
+
+This requires access to the files and a good UTF-8 text editor.
+
+==== Create a directory for your new locale
+
+. Create a new directory in the locale directory with the 2-character ISO 639-1 code for the language. For example, if you would like to do an
+Amharic translation, your directory would be called `am`.
+. Create a PHP file called metadata.php. Make sure that the class name begins with the ISO 639-1 code for your language.
++
+[source,php]
+----
+<?php
+class amMetaData {
+        public function __construct() {
+                $this->locale_description = "Amharic";
+        }
+        function pluralForm($n) {
+                if ($n == 1 or $n == -1) {
+                        return 'singular';
+                } else {
+                        return 'plural';
+                }
+        }
+        function moneyFormat($amount) {
+                if ($amount < 0) {
+                        return sprintf("(-%.br)", abs($amount));
+                } else {
+                        return sprintf("%.br", $amount);
+                }
+        }
+}
+----
++
+. Add translations to trans.php.
+
