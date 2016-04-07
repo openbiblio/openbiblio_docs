@@ -1,0 +1,23 @@
+== Managing your catalog
+
+This section describes the following settings in the Admin menu.
+
+=== Managing media types
+
+Media types link
+
+=== Managing collections
+
+Collections
+
+=== Managing displayed fields
+
+Biblio fields
+
+=== Managing custom fields for copies
+
+Biblio copy fields
+
+=== Managing copy catalog options
+
+Z39.50 and SRU

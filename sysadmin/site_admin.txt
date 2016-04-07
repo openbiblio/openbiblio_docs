@@ -1,0 +1,31 @@
+== Managing your libraries
+
+OpenBiblio 1.0 introduced the ability to manage multiple libraries
+with a single OpenBiblio installation.  Each library is considered
+a separate "site," with its own name, collection, address, hours, 
+closed dates, and other settings.
+
+=== Adding a site
+
+. Go to Admin -> Sites.
+. Click "Add New".
+. Fill out the relevant information. Choose the calendar that includes
+the dates your new library will be closed.  See below for more information
+about the calendars.
+. Click "Add."
+
+=== Deleting a site
+
+. Ensure that there are no copies at the site that you'd like to delete.
+. Sign in as a different site.
+. Go to Admin -> Sites.
+. Delete the site.
+
+WARNING: Don't delete a site when you are logged in, or you will cause a
+permanent error state that won't be resolved until you manually add
+the site back into the database.
+
+WARNING: If you delete a site that has copies attached, they will show as
+"Undefined" in the system.
+
+

@@ -3,7 +3,11 @@ OpenBiblio System Administration
 
 Thanks for being an OpenBiblio system administrator.  We're glad that you are helping your library in this way.
 
+include::site_admin.txt[]
+
 include::user_admin.txt[]
+
+include::catalog_admin.txt[]
 
 == Configuring the OPAC
 
