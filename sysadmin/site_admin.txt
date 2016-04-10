@@ -12,6 +12,11 @@ closed dates, and other settings.
 . Fill out the relevant information. Choose the calendar that includes
 the dates your new library will be closed.  See below for more information
 about the calendars.
++
+WARNING: If you do not choose a calendar, the new site will not be able
+to calculate due dates properly and you will not be able to check out
+any copies at this site.
++
 . Click "Add."
 
 === Deleting a site
