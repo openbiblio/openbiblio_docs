@@ -36,7 +36,12 @@ You will also probably wish to consult the codebase to figure out exact behavior
 2. If you are making a simple edit, simply find the correct `.txt` file and make your correction.
 3. If you are adding a lot of new content, create a new `.txt` file in the appropriate folder.  Put an `include::my_new_file.txt[]` in the folder's `root.txt` file.
 4. Save your edits.
-5. If you don't have edit permissions, submit a pull request to get your changes incorporated.
+5. If you don't have edit permissions, submit a pull request to get your changes incorporated.  This sounds complicated, but it's
+actually pretty simple:
+  * Go to your forked repository.
+  * Click the pull requests tab
+  * Click New Pull Request.
+  * Verify your changes, then click "Create pull request".
 
 # Contributing on the command line.
 1. `git clone https://github.com/openbiblio/openbiblio_docs`
