@@ -28,6 +28,8 @@ The script `compile_all.sh` actually creates all the PDF and HTML files.  If you
 
 GitHub automatically publishes the docs because we are using the `gh-pages` branch.
 
+You will also probably wish to consult the codebase to figure out exact behavior.  You can find the code here: https://bitbucket.org/mstetson/obiblio-1.0-wip/src
+
 # Contributing through GitHub's Web interface
 
 1. If you don't have edit permissions on this directory, click "Fork" to make your own working copy of the repo.
