@@ -26,3 +26,18 @@ Each folder contains a file called `root.txt`, which uses ASCIIDOC `include::my_
 
 The script `compile_all.sh` actually creates all the PDF and HTML files.  If you've got a Linux box, feel free to run it after you make changes to the `.txt` files.  Otherwise, don't sweat it; I'll compile your changes next time I make a change to the docs.
 
+GitHub automatically publishes the docs because we are using the `gh-pages` branch.
+
+# Contributing through GitHub's Web interface
+
+1. If you don't have edit permissions on this directory, click "Fork" to make your own working copy of the repo.
+2. If you are making a simple edit, simply find the correct `.txt` file and make your correction.
+3. If you are adding a lot of new content, create a new `.txt` file in the appropriate folder.  Put an `include::my_new_file.txt[]` in the folder's `root.txt` file.
+4. Save your edits.
+5. If you don't have edit permissions, submit a pull request to get your changes incorporated.
+
+# Contributing on the command line.
+1. `git clone https://github.com/openbiblio/openbiblio_docs`
+2. If you are making a simple edit, simply find the correct `.txt` file and make your correction.
+3. If you are adding a lot of new content, create a new `.txt` file in the appropriate folder.  Put an `include::my_new_file.txt[]` in the folder's `root.txt` file.
+4. `git push origin gh-pages`
