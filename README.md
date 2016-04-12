@@ -39,6 +39,7 @@ You will also probably wish to consult the codebase to figure out exact behavior
 6. If you are adding a lot of new content, create a new `.txt` file in the appropriate folder.  Put an `include::my_new_file.txt[]` in the folder's `root.txt` file.
 7. Navigate back to GitHub Desktop and go to the Changes tab.  You should see a listing of all of the modifications you made.
 8. Type a summary of your change and click "Commit to gh-pages".
+9. Click the sync button.
 
 # Contributing through GitHub's Web interface
 
