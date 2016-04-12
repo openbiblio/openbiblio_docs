@@ -36,6 +36,7 @@ Note: You might want to download the Github Desktop at https://desktop.github.co
 1. If you don't have edit permissions on this directory, click "Fork" to make your own working copy of the repo.
 2. If you are making a simple edit, simply find the correct `.txt` file and make your correction.
 3. If you are adding a lot of new content, create a new `.txt` file in the appropriate folder.  Put an `include::my_new_file.txt[]` in the folder's `root.txt` file.
+4. If you are documenting a completely new module and wish to create a new folder, click "create file" and name the file `module_name` + forward slash + `root.txt`.  For example, if you wanted to document a space exploration module, you would create a file called `space_exploration/root.txt`.
 4. Save your edits.
 5. If you don't have edit permissions, submit a pull request to get your changes incorporated.  This sounds complicated, but it's
 actually pretty simple:
