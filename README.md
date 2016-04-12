@@ -32,14 +32,15 @@ You will also probably wish to consult the codebase to figure out exact behavior
 
 # Contributing through GitHub Desktop 
 1. Download the Github Desktop at https://desktop.github.com/.
-2. [Clone this repository](https://help.github.com/desktop/guides/contributing/cloning-a-repository-from-github-desktop/).
-3. Choose a folder on your local computer where you'd like to house these files.
-4. Navigate to this folder using Windows Explorer.
-5. Edit the files using any text editor you'd like.  If you are making a simple edit, simply find the correct `.txt` file and make your correction.
-6. If you are adding a lot of new content, create a new `.txt` file in the appropriate folder.  Put an `include::my_new_file.txt[]` in the folder's `root.txt` file.
-7. Navigate back to GitHub Desktop and go to the Changes tab.  You should see a listing of all of the modifications you made.
-8. Type a summary of your change and click "Commit to gh-pages".
-9. Click the sync button.
+2. Log in using your Github account.
+3. [Clone this repository](https://help.github.com/desktop/guides/contributing/cloning-a-repository-from-github-desktop/).
+4. Choose a folder on your local computer where you'd like to house these files.
+5. Navigate to this folder using Windows Explorer.
+6. Edit the files using any text editor you'd like.  If you are making a simple edit, simply find the correct `.txt` file and make your correction.
+7. If you are adding a lot of new content, create a new `.txt` file in the appropriate folder.  Put an `include::my_new_file.txt[]` in the folder's `root.txt` file.
+8. Navigate back to GitHub Desktop and go to the Changes tab.  You should see a listing of all of the modifications you made.
+9. Type a summary of your change and click "Commit to gh-pages".
+10. Click the sync button.
 
 # Contributing through GitHub's Web interface
 
