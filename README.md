@@ -31,6 +31,7 @@ GitHub automatically publishes the docs because we are using the `gh-pages` bran
 You will also probably wish to consult the codebase to figure out exact behavior.  You can find the code here: https://bitbucket.org/mstetson/obiblio-1.0-wip/src
 
 # Contributing through GitHub's Web interface
+Note: You might want to download the Github Desktop at https://desktop.github.com/ first.
 
 1. If you don't have edit permissions on this directory, click "Fork" to make your own working copy of the repo.
 2. If you are making a simple edit, simply find the correct `.txt` file and make your correction.
