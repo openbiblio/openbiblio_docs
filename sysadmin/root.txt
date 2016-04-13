@@ -13,8 +13,6 @@ include::catalog_admin.txt[]
 
 This section will describe settings found in the admin menu.
 
-include::plugins.txt[]
-
 include::locale_admin.txt[]
 
 == Managing the MySQL database
