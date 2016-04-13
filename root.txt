@@ -29,6 +29,8 @@ include::research/root.txt[]
 
 include::reports/root.txt[]
 
+include::plugins/root.txt[]
+
 include::recipes/root.txt[]
 
 :leveloffset: -1

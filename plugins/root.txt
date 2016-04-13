@@ -1,13 +1,39 @@
-== Managing plugins
+= Managing OpenBiblio Plugins
 
-OpenBiblio has a very flexible plugin system.
+OpenBiblio has a very flexible plugin system. This document will describe how you can 
+enable and disable plugins, understand the plugins that are included with OpenBiblio,
+and design a new plugin.
+
+== Enabling plugins
+
+TIP: You will need access to the Tools menu.
+
+. Go to Tools -> Plugin Manager.
+. Make sure that Plugins are Allowed.
+. Check the box next to each plugin you are interested in using.
+
+== Plugins bundled with OpenBiblio
+
+These plugins all come bundled with a default OpenBiblio installation.
+
+include::cssUtils.txt[]
+
+include::listMgr.txt[]
+
+include::mediaFields.txt[]
+
+include::orphanFiles.txt[]
+
+include::transUtils.txt[]
+
+include::callNoUtils.txt[]
 
 
-=== Creating a new plugin
+== Creating a new plugin
 
 This requires basic PHP skills and access to the files.
 
-==== Design the plugin
+=== Design the plugin
 
 . Create a new directory that begins with the word plugin, followed by an underscore, followed by the name of your plugin.  In UNIX systems, you might type something like this:
 +
@@ -19,7 +45,7 @@ mkdir plugin_excitingPlugin
 . If you need to include custom CSS or JS, add it to a file called custom_head.php in this new directory.
 . Create three PHP files in the directory: a JS file, a Srvr file, and a Forms file.
 
-===== Create a plugin server
+==== Create a plugin server
 
 Your plugin's server -- located at `plugin_excitingPlugin/excitingSrvr.php` -- is responsible
 for three tasks:
@@ -61,7 +87,7 @@ $bib = new Biblios;
 You can then access all those great methods and data through the `$bib` object.
 
 
-==== Add your plugin to the OpenBiblio menu
+=== Add your plugin to the OpenBiblio menu
 
 . Create a new directory inside the plugins directory with the name of your plugin.  In UNIX systems, you might type something like this:
 +
@@ -81,7 +107,8 @@ Nav::node('tools/excitingPlugin', 'Exciting Plugin', '../plugin_excitingPlugin/e
 . If you'd like to use Obib's localization framework but need to localize some more terms, create a file called tran.tran. You can use this to add new terms to your locale.
 +
 TIP: Plugins already have all of the exciting localization ability built in.  However, note that you cannot override localized term definitions within tran.tran.
-
++
++
 WARNING: There is not yet a place to specify localized terms for plugins.
 +
 . Turn on your plugin using Tools -> Plugin Manager.
