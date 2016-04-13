@@ -14,7 +14,7 @@ cataloging|http://openbiblio.github.io/openbiblio_docs/cataloging/root.html|http
 circulation|http://openbiblio.github.io/openbiblio_docs/circulation/root.html|http://openbiblio.github.io/openbiblio_docs/circulation/root.pdf
 community|http://openbiblio.github.io/openbiblio_docs/community/root.html|http://openbiblio.github.io/openbiblio_docs/community/root.pdf
 installation|http://openbiblio.github.io/openbiblio_docs/installation/root.html|http://openbiblio.github.io/openbiblio_docs/installation/root.pdf
-plugins|http://openbiblio.github.io/openbiblio_docs/pluginplugins/root.html|http://openbiblio.github.io/openbiblio_docs/plugins/root.pdf
+plugins|http://openbiblio.github.io/openbiblio_docs/plugins/root.html|http://openbiblio.github.io/openbiblio_docs/plugins/root.pdf
 recipes|http://openbiblio.github.io/openbiblio_docs/recipes/root.html|http://openbiblio.github.io/openbiblio_docs/recipes/root.pdf
 reports|http://openbiblio.github.io/openbiblio_docs/reports/root.html|http://openbiblio.github.io/openbiblio_docs/reports/root.pdf
 research|http://openbiblio.github.io/openbiblio_docs/research/root.html|http://openbiblio.github.io/openbiblio_docs/research/root.pdf
