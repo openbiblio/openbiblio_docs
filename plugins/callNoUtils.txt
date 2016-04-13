@@ -1,11 +1,12 @@
 == Call Number Utilities (CallNoUtils)
 
-This 
+This section describes the Call Number Utilities plugin.
 
 === Find Records without call numbers
 
-    As stated, this function will scan the entire database and return a list of all biblios which do not have a call number assigned.
-    At this time there is no mechanism to bring up the offending record for editing.
+As stated, this function will scan the entire database and return a list of all biblios which do not have a call number assigned.
+
+At this time there is no mechanism to bring up the offending record for editing.
 
 === Dry Run of call number add
 
