@@ -1,4 +1,4 @@
-== CSS Utilities (cssUtils)
+=== CSS Utilities (cssUtils)
 
 This plug-in will looks for two categories of CSS issues:
 1. CSS entries in .../styles.css that appear to not be in use 
