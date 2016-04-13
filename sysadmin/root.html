@@ -771,6 +771,16 @@ Fill out the relevant information. Choose the calendar that includes
 the dates your new library will be closed.  See below for more information
 about the calendars.
 </p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">If you do not choose a calendar, the new site will not be able
+to calculate due dates properly and you will not be able to check out
+any copies at this site.</td>
+</tr></table>
+</div>
 </li>
 <li>
 <p>
@@ -884,146 +894,6 @@ password.</p></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_managing_plugins">Managing plugins</h2>
-<div class="sectionbody">
-<div class="paragraph"><p>OpenBiblio has a very flexible plugin system.</p></div>
-<div class="sect2">
-<h3 id="_creating_a_new_plugin">Creating a new plugin</h3>
-<div class="paragraph"><p>This requires basic PHP skills and access to the files.</p></div>
-<div class="sect3">
-<h4 id="_design_the_plugin">Design the plugin</h4>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Create a new directory that begins with the word plugin, followed by an underscore, followed by the name of your plugin.  In UNIX systems, you might type something like this:
-</p>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt>mkdir plugin_excitingPlugin</tt></pre></div></div>
-</li>
-<li>
-<p>
-If you need to include custom CSS or JS, add it to a file called custom_head.php in this new directory.
-</p>
-</li>
-<li>
-<p>
-Create three PHP files in the directory: a JS file, a Srvr file, and a Forms file.
-</p>
-</li>
-</ol></div>
-<div class="sect4">
-<h5 id="_create_a_plugin_server">Create a plugin server</h5>
-<div class="paragraph"><p>Your plugin&#8217;s server&#8201;&#8212;&#8201;located at <code>plugin_excitingPlugin/excitingSrvr.php</code>&#8201;&#8212;&#8201;is responsible
-for three tasks:</p></div>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Performing any actions the user requests.
-</p>
-</li>
-<li>
-<p>
-Obtaining any relevant data from the database, file structure, or external API.
-</p>
-</li>
-<li>
-<p>
-Displaying the relevant data to the user in a nice HTML format.
-</p>
-</li>
-</ol></div>
-<div class="paragraph"><p>A basic plugin server consists of a require statement to get the necessary data and methods and a
-switch statement to take care of the <code>$_REQUEST['mode']</code> variable. Here&#8217;s a simple example:</p></div>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #990000">&lt;?php</span>
-        <span style="font-weight: bold"><span style="color: #000080">require_once</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'../shared/common.php'</span><span style="color: #990000">);</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">switch</span></span> <span style="color: #990000">(</span><span style="color: #009900">$_REQUEST</span><span style="color: #990000">[</span><span style="color: #FF0000">'mode'</span><span style="color: #990000">])</span><span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">'exciting'</span><span style="color: #990000">:</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">echo</span></span> <span style="color: #FF0000">'This plugin is very exciting.'</span><span style="color: #990000">;</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #FF0000">'boring'</span><span style="color: #990000">:</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">echo</span></span> <span style="color: #FF0000">'This plugin is pretty boring.'</span><span style="color: #990000">;</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">default</span></span><span style="color: #990000">:</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">echo</span></span> <span style="font-weight: bold"><span style="color: #000000">T</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'invalid mode'</span><span style="color: #990000">);</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span></tt></pre></div></div>
-<div class="paragraph"><p>If you would like to access data from the database, you should require the appropriate model from the
-model directory.  For example, if you&#8217;d like to use the Biblios model, you would include this in your
-plugin_excitingPlugin/excitingSrvr.php:</p></div>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt>require_once('../model/Biblios.php');
-$bib = new Biblios;</tt></pre></div></div>
-<div class="paragraph"><p>You can then access all those great methods and data through the <code>$bib</code> object.</p></div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_add_your_plugin_to_the_openbiblio_menu">Add your plugin to the OpenBiblio menu</h4>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Create a new directory inside the plugins directory with the name of your plugin.  In UNIX systems, you might type something like this:
-</p>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt>mkdir plugins/excitingPlugin</tt></pre></div></div>
-</li>
-<li>
-<p>
-Create a file within this new directory called nav.nav
-</p>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #990000">&lt;?php</span>
-Nav<span style="color: #990000">::</span><span style="font-weight: bold"><span style="color: #000000">node</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'tools/excitingPlugin'</span><span style="color: #990000">,</span> <span style="color: #FF0000">'Exciting Plugin'</span><span style="color: #990000">,</span> <span style="color: #FF0000">'../plugin_excitingPlugin/excitingPluginForms.php'</span><span style="color: #990000">);</span></tt></pre></div></div>
-</li>
-<li>
-<p>
-If you&#8217;d like to use Obib&#8217;s localization framework but need to localize some more terms, create a file called tran.tran. You can use this to add new terms to your locale.
-</p>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Tip</div>
-</td>
-<td class="content">Plugins already have all of the exciting localization ability built in.  However, note that you cannot override localized term definitions within tran.tran.</td>
-</tr></table>
-</div>
-</li>
-</ol></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">There is not yet a place to specify localized terms for plugins.</td>
-</tr></table>
-</div>
-<div class="paragraph"><p>+
-. Turn on your plugin using Tools &#8594; Plugin Manager.</p></div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="_managing_locales">Managing locales</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>OpenBiblio can be translated into any language that you wish!</p></div>
@@ -1100,7 +970,7 @@ Add translations to trans.php.
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2016-04-07 15:29:56 PDT
+ 2016-04-13 10:08:21 PDT
 </div>
 </div>
 </body>
