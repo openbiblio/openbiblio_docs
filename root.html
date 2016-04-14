@@ -977,7 +977,7 @@ http://www.gnu.org/software/src-highlite -->
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Tip</div>
+<img src="./images/icons/tip.png" alt="Tip" />
 </td>
 <td class="content">This will prompt you to choose a root password for MySQL.  Make sure it is a secure one!</td>
 </tr></table>
@@ -993,7 +993,7 @@ sudo mysql_secure_installation</tt></pre></div></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Tip</div>
+<img src="./images/icons/tip.png" alt="Tip" />
 </td>
 <td class="content">mysql_secure_installation will ask you for a current root password, which you may leave blank.  Be sure to give root a new, secure password.  You should also choose to remove anonymous users, disallow root login remotely, and remove the test database.</td>
 </tr></table>
@@ -1134,7 +1134,7 @@ about the calendars.
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Warning</div>
+<img src="./images/icons/warning.png" alt="Warning" />
 </td>
 <td class="content">If you do not choose a calendar, the new site will not be able
 to calculate due dates properly and you will not be able to check out
@@ -1176,7 +1176,7 @@ Delete the site.
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Warning</div>
+<img src="./images/icons/warning.png" alt="Warning" />
 </td>
 <td class="content">Don&#8217;t delete a site when you are logged in, or you will cause a
 permanent error state that won&#8217;t be resolved until you manually add
@@ -1186,7 +1186,7 @@ the site back into the database.</td>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Warning</div>
+<img src="./images/icons/warning.png" alt="Warning" />
 </td>
 <td class="content">If you delete a site that has copies attached, they will show as
 "Undefined" in the system.</td>
@@ -1202,7 +1202,7 @@ name, and permission set to your staff member.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Warning</div>
+<img src="./images/icons/warning.png" alt="Warning" />
 </td>
 <td class="content">You must assign at least one permission, or the staff member will not be able to log in.</td>
 </tr></table>
@@ -1338,7 +1338,7 @@ Enter a portion of the member&#8217;s last name.  If you have member barcodes tu
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Tip</div>
+<img src="./images/icons/tip.png" alt="Tip" />
 </td>
 <td class="content">Anybody with administrator privileges can turn member barcodes on using Tools &#8594; System Settings &#8594; Use Member Barcodes.</td>
 </tr></table>
@@ -1484,7 +1484,114 @@ to false once you are satisfied with your settings and file.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_importing_csv_records">Importing CSV records</h3>
-<div class="paragraph"><p>Instructions coming soon.</p></div>
+<div class="sect3">
+<h4 id="_the_csv_file">The CSV File</h4>
+<div class="paragraph"><p>CSV files are laid out in columns and rows. The first row must contain the heading information.</p></div>
+<div class="paragraph"><p>Some common headings are:</p></div>
+<div class="tableblock">
+<table rules="all"
+width="100%"
+frame="border"
+cellspacing="0" cellpadding="4">
+<col width="50%" />
+<col width="50%" />
+<thead>
+<tr>
+<th align="left" valign="top">Column header</th>
+<th align="left" valign="top">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" valign="top"><p class="table">barCo</p></td>
+<td align="left" valign="top"><p class="table">Barcode Number</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">media</p></td>
+<td align="left" valign="top"><p class="table">Media Type</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">coll</p></td>
+<td align="left" valign="top"><p class="table">Collection</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">099$a</p></td>
+<td align="left" valign="top"><p class="table">Call Number</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">100$a</p></td>
+<td align="left" valign="top"><p class="table">Author</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">245$a</p></td>
+<td align="left" valign="top"><p class="table">Title</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">245$h</p></td>
+<td align="left" valign="top"><p class="table">Medium</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">306$a</p></td>
+<td align="left" valign="top"><p class="table">Playing Time</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">260$c</p></td>
+<td align="left" valign="top"><p class="table">Date of Publication, Distribution, etc.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="paragraph"><p>To find more headings click on the "Admin" link on the left side of the page. From there click on the link that says "Biblio Fields". There you will find different options to use for headers.
+The data will go from the second row down in the CSV file. The data needs to be input in the same order as the column headings in the first row.
+The Media Type heading requires specific data to be input in the column. The data options available for the media column are:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+audio tapes
+</p>
+</li>
+<li>
+<p>
+book
+</p>
+</li>
+<li>
+<p>
+cd audio
+</p>
+</li>
+<li>
+<p>
+cd computer
+</p>
+</li>
+<li>
+<p>
+equipment
+</p>
+</li>
+<li>
+<p>
+magazines
+</p>
+</li>
+<li>
+<p>
+maps
+</p>
+</li>
+<li>
+<p>
+video/dvd
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect3">
+<h4 id="_importing_the_csv_file">Importing the CSV file</h4>
+<div class="paragraph"><p>Click on the "Browse" button, from there you should be prompted to open your CSV file.
+In the options box you will need to find the "Show all records" drop down. This drop down needs to be set as yes or you will be unable to view the records.</p></div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_bulk_delete_records">Bulk delete records</h3>
@@ -1531,7 +1638,7 @@ and design a new plugin.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Tip</div>
+<img src="./images/icons/tip.png" alt="Tip" />
 </td>
 <td class="content">You will need access to the Tools menu.</td>
 </tr></table>
@@ -1565,7 +1672,7 @@ Check the box next to each plugin you are interested in using.
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Warning</div>
+<img src="./images/icons/warning.png" alt="Warning" />
 </td>
 <td class="content">No fixes are suggested or made. The user should be VERY careful in removing any of these without a thorough test.</td>
 </tr></table>
@@ -1704,7 +1811,7 @@ If you&#8217;d like to use Obib&#8217;s localization framework but need to local
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Tip</div>
+<img src="./images/icons/tip.png" alt="Tip" />
 </td>
 <td class="content">Plugins already have all of the exciting localization ability built in.  However, note that you cannot override localized term definitions within tran.tran.</td>
 </tr></table>
