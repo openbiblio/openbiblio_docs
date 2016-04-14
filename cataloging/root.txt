@@ -51,7 +51,38 @@ to false once you are satisfied with your settings and file.
 
 == Importing CSV records
 
-Instructions coming soon.
+- The CSV File -
+CSV files are laid out in columns and rows. The first row must contain the heading information. 
+Some common headings are:
+
+barCo - Barcode Number
+media - Media Type
+coll  - Collection
+099$a - Call Number
+100$a - Author
+245$a - Title
+245$h - Medium
+306$a - Playing Time
+260$c - Date of Publication, Distribution, etc.
+
+To find more headings click on the "Admin" link on the left side of the page. From there click on the link that says "Biblio Fields". There you will find different options to use for headers.
+The data will go from the second row down in the CSV file. The data needs to be input in the same order as the column headings in the first row.
+The Media Type heading requires specific data to be input in the column. The data options available for the media column are:
+
+audio tapes
+book
+cd audio
+cd computer
+equipment
+magazines
+maps
+video/dvd
+
+- Importing the CSV file -
+
+Click on the "Browse" button, from there you should be prompted to open your CSV file.
+In the options box you will need to find the "Show all records" drop down. This drop down needs to be set as yes or you will be unable to view the records.
+
 
 
 == Bulk delete records
