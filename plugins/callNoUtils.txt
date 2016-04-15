@@ -1,18 +1,20 @@
 === Call Number Utilities (CallNoUtils)
 
 This section describes the Call Number Utilities plugin.
+A pull-down allows a search for:
+.. items without an assigned call number
+.. proposed call numbers based on a desired schema
+.. posting proposed call numbers as needed.
 
 ==== Find Records without call numbers
 
-As stated, this function will scan the entire database and return a list of all biblios which do not have a call number assigned.
-
-At this time there is no mechanism to bring up the offending record for editing.
+This function will scan the entire database and return a list of all biblios which do not have a call number assigned.
 
 ==== Dry Run of call number add
 
-This section describes the dry run feature.
+This function will propose call numbers based on the preferred source.
 
 ==== Add call numbers to records
 
-This section describes the add feature.
+This function will post the proposed call numbers.
 
