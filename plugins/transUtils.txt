@@ -1,0 +1,12 @@
+== Translation Utilities (transUtils)
+
+This plugin is intended as an aid to the creation or maintenance of a locale translation.
+All T('...') entries in OB .php files are checked.
+Each available translation is tested seperately.
+
+The following functions are available:
+1. Check for Duplicate Entries. Intended to find duplicate entries which may be out of place alphebetically and so un-noticed.
+2. Check for Unused Entries. Look for table entries which have been abandoned, or through miss-spelling somewhere, are not currently being used.
+3. Check for Needed Entries. Look for T('...') entries which do not have a corresponding entry in the trans.php file.
+4. Check for Potential Entries. Look for quoted strings (both normal display, and error) in all files which do not have a T('...') surround. 
+Error messages embedded in the various language processors (PHP, JS, CSS, mySQL, etc) will not be caught.
