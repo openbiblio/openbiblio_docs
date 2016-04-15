@@ -4,5 +4,9 @@ This plug-in will looks for two categories of CSS issues:
 1. CSS entries in .../styles.css that appear to not be in use 
 2. CSS classes referenced in OB that do not appear in .../styles.css
 
-WARNING: No fixes are suggested or made. The user should be VERY careful in removing any of these without a thorough test.
+WARNINGS: 
+= No fixes are suggested or made. The user should be VERY careful in removing any that appear to not be in use as some css usage is dynamic via jQuery and is dificult to detect programatically.
+
+= Query selectors having multiple entries (e.g. 	$('.reqd sup')) are not currently parsed as multiple entries to be searched.
+
 
