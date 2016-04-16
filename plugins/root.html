@@ -783,33 +783,126 @@ Check the box next to each plugin you are interested in using.
 <div class="paragraph"><p>These plugins all come bundled with a default OpenBiblio installation.</p></div>
 <div class="sect2">
 <h3 id="_css_utilities_cssutils">CSS Utilities (cssUtils)</h3>
-<div class="paragraph"><p>This plug-in will looks for two categories of CSS issues:
-1. CSS entries in &#8230;/styles.css that appear to not be in use
-2. CSS classes referenced in OB that do not appear in &#8230;/styles.css</p></div>
+<div class="paragraph"><p>This plug-in will looks for two categories of CSS issues:</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+CSS entries in &#8230;/styles.css that appear to not be in use
+</p>
+</li>
+<li>
+<p>
+CSS classes referenced in OB that do not appear in &#8230;/styles.css
+</p>
+</li>
+</ol></div>
+<div class="sect3">
+<h4 id="_warnings">WARNINGS</h4>
+<div class="paragraph"><p>No fixes are suggested or made. The user should be VERY careful in removing any that appear to not be in use as some css usage is dynamic via jQuery and is dificult to detect programatically.</p></div>
+<div class="paragraph"><p>Query selectors having multiple entries (e.g.   $(<em>.reqd sup</em>)) are not currently parsed as multiple entries to be searched.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pull_down_list_manager_list_manager">Pull-Down List Manager (List Manager)</h3>
+<div class="paragraph"><p>This plug-in is intended to provide a developer with a simple means to view the contents of pull down list
+that are used in various locations throughout OB.</p></div>
+<div class="paragraph"><p>No means are provide at this time to modify these lists.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_media_fields">Media Fields</h3>
+<div class="paragraph"><p>This plug-in is intended to provide a means for OB users to exchange input form layouts.</p></div>
+<div class="paragraph"><p>Some media forms are infrequently used and a new user may not know just what material should be collected.</p></div>
+<div class="paragraph"><p>Using this plugin, it is possible to create a text file of a layout that can be emailed to another for them to import.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_orphan_file_finder_orpahnfiles">Orphan File finder (orpahnFiles)</h3>
+<div class="paragraph"><p>This plug-in is intended to find old abandoned files.
+The concept here is to find files which:
+. are not referred to via any menu
+. are not referred to by any HTML mechanism such as Javascript, CSS, Form Actions, Images, etc.
+. are not referred to by any PHP mechanism such as 'includ&#8217;e s or 'require&#8217;s
+. are not referenced in Object class inheritances.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Warning</div>
+<div class="title">Note</div>
 </td>
-<td class="content">No fixes are suggested or made. The user should be VERY careful in removing any of these without a thorough test.</td>
+<td class="content">there are many legacy files and folders the have an initial letter&#8217;x'.
+These are to be considered <em>Legacy</em> works and may be removed from the OB project at the Lead Developer&#8217;s descretion.</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">There is an entire &#8230;/docs folder that has never been integrated into OB ver 1.0.
+this folder may be removed from the OB project at the Lead Developer&#8217;s descretion.</td>
 </tr></table>
 </div>
 </div>
 <div class="sect2">
+<h3 id="_translation_utilities_transutils">Translation Utilities (transUtils)</h3>
+<div class="paragraph"><p>This plugin is intended as an aid to the creation or maintenance of a locale translation.
+All T(<em>&#8230;</em>) entries in OB .php files are checked.
+Each available translation is tested seperately.</p></div>
+<div class="paragraph"><p>The following functions are available:</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Check for Duplicate Entries. Intended to find duplicate entries which may be out of place alphebetically and so un-noticed.
+</p>
+</li>
+<li>
+<p>
+Check for Unused Entries. Look for table entries which have been abandoned, or through miss-spelling somewhere, are not currently being used.
+</p>
+</li>
+<li>
+<p>
+Check for Needed Entries. Look for T(<em>&#8230;</em>) entries which do not have a corresponding entry in the trans.php file.
+</p>
+</li>
+<li>
+<p>
+Check for Potential Entries. Look for quoted strings (both normal display, and error) in all files which do not have a T(<em>&#8230;</em>) surround.
+Error messages embedded in the various language processors (PHP, JS, CSS, mySQL, etc) will not be caught.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect2">
 <h3 id="_call_number_utilities_callnoutils">Call Number Utilities (CallNoUtils)</h3>
 <div class="paragraph"><p>This section describes the Call Number Utilities plugin.</p></div>
+<div class="paragraph"><p>A pull-down allows a search for:</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+items without an assigned call number
+</p>
+</li>
+<li>
+<p>
+proposed call numbers based on a desired schema
+</p>
+</li>
+<li>
+<p>
+posting proposed call numbers as needed.
+</p>
+</li>
+</ol></div>
 <div class="sect3">
 <h4 id="_find_records_without_call_numbers">Find Records without call numbers</h4>
-<div class="paragraph"><p>As stated, this function will scan the entire database and return a list of all biblios which do not have a call number assigned.</p></div>
-<div class="paragraph"><p>At this time there is no mechanism to bring up the offending record for editing.</p></div>
+<div class="paragraph"><p>This function will scan the entire database and return a list of all biblios which do not have a call number assigned.</p></div>
 </div>
 <div class="sect3">
 <h4 id="_dry_run_of_call_number_add">Dry Run of call number add</h4>
-<div class="paragraph"><p>This section describes the dry run feature.</p></div>
+<div class="paragraph"><p>This function will propose call numbers based on the preferred source.</p></div>
 </div>
 <div class="sect3">
 <h4 id="_add_call_numbers_to_records">Add call numbers to records</h4>
-<div class="paragraph"><p>This section describes the add feature.</p></div>
+<div class="paragraph"><p>This function will post the proposed call numbers.</p></div>
 </div>
 </div>
 </div>
