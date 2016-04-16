@@ -1,4 +1,4 @@
-== Translation Utilities (transUtils)
+=== Translation Utilities (transUtils)
 
 This plugin is intended as an aid to the creation or maintenance of a locale translation.
 All T('...') entries in OB .php files are checked.

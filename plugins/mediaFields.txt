@@ -1,4 +1,4 @@
-== Media Fields
+=== Media Fields
 
 This plug-in is intended to provide a means for OB users to exchange input form layouts. 
 

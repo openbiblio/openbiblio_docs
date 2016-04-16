@@ -1,4 +1,4 @@
-== Orphan File finder (orpahnFiles)
+=== Orphan File finder (orpahnFiles)
 
 This plug-in is intended to find old abandoned files. 
 The concept here is to find files which:
