@@ -7,6 +7,8 @@ Introduction
 
 This manual provides documentation for users of OpenBiblio 1.0, an automated library system.
 
+OpenBiblio 1.0 has a public OPAC interface and a staff interface. You can successfully use either interface on your computer, tablet, or phone.
+
 
 About This Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~
