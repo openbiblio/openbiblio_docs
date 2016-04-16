@@ -2,13 +2,13 @@
 
 This plug-in is intended to find old abandoned files. 
 The concept here is to find files which:
-.. are not referred to via any menu
-.. are not referred to by any HTML mechanism such as Javascript, CSS, Form Actions, Images, etc.
-.. are not referred to by any PHP mechanism such as 'includ'e s or 'require's
-.. are not referenced in Object class inheritances.
+. are not referred to via any menu
+. are not referred to by any HTML mechanism such as Javascript, CSS, Form Actions, Images, etc.
+. are not referred to by any PHP mechanism such as 'includ'e s or 'require's
+. are not referenced in Object class inheritances.
 
-Note: there are many legacy files and folders the have an initial letter'x'. 
+NOTE: there are many legacy files and folders the have an initial letter'x'. 
 These are to be considered 'Legacy' works and may be removed from the OB project at the Lead Developer's descretion.
 
-Note: There is an entire .../docs folder that has never been integrated into OB ver 1.0.
+NOTE: There is an entire .../docs folder that has never been integrated into OB ver 1.0.
 this folder may be removed from the OB project at the Lead Developer's descretion.

@@ -1,10 +1,12 @@
 === Call Number Utilities (CallNoUtils)
 
 This section describes the Call Number Utilities plugin.
+
 A pull-down allows a search for:
-.. items without an assigned call number
-.. proposed call numbers based on a desired schema
-.. posting proposed call numbers as needed.
+
+. items without an assigned call number
+. proposed call numbers based on a desired schema
+. posting proposed call numbers as needed.
 
 ==== Find Records without call numbers
 
