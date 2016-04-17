@@ -898,6 +898,20 @@ password.</p></div>
 <div class="sectionbody">
 <div class="paragraph"><p>OpenBiblio can be translated into any language that you wish!</p></div>
 <div class="sect2">
+<h3 id="_character_set">Character set</h3>
+<div class="paragraph"><p>You can use any character set that you find by running the MySQL command <a href="https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html">SHOW CHARACTER SET</a>.
+Do this by going to Admin &#8594; Locale and entering your preferred character set.
+If you enter an invalid charset or leave this field blank, it will default to the <em>utf8</em> character set.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">The character set you specify will appear in the <code>&lt;meta charset&gt;</code> attribute and apply to any database calls.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_creating_a_new_locale">Creating a new locale</h3>
 <div class="paragraph"><p>This requires access to the files and a good UTF-8 text editor.</p></div>
 <div class="sect3">
@@ -970,7 +984,7 @@ Add translations to trans.php.
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2016-04-13 10:08:21 PDT
+ 2016-04-16 17:01:02 PDT
 </div>
 </div>
 </body>

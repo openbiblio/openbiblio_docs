@@ -2,6 +2,13 @@
 
 OpenBiblio can be translated into any language that you wish!
 
+=== Character set
+
+You can use any character set that you find by running the MySQL command link:https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html[SHOW CHARACTER SET].
+Do this by going to Admin -> Locale and entering your preferred character set.
+If you enter an invalid charset or leave this field blank, it will default to the _utf8_ character set.
+
+NOTE: The character set you specify will appear in the `<meta charset>` attribute and apply to any database calls.
 
 === Creating a new locale
 
