@@ -1,0 +1,9 @@
+=== Adding an item
+
+After you add your record, you will be able to attach an actual, physical item to it.
+
+If your library is using barcodes, you will be able to scan or type your barcode into the
+barcode number field.  If you have the Auto Barcode option selected, OpenBiblio will
+generate a barcode for you.  If you are not using barcodes, OpenBiblio will generate
+one that will only be used for internal purposes.
+

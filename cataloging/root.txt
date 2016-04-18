@@ -11,8 +11,9 @@ OpenBiblio's use of MARC is pretty standard, but there are a few specific ways i
 
 === Call numbers
 
-OpenBiblio's Call Number searches search only 099$a, which is the local call number field.  However, if you'd like to add call numbers from other fields, you can enable the Call Number Utilities plugin, which allows you to populate the 099$a fields with data from other
-call number fields to make them searchable.
+OpenBiblio's Call Number searches search only 099$a, which is the local call number field.  However, if you'd like to add call numbers from other fields,
+ you can enable the Call Number Utilities plugin, which allows you to populate the 099$a fields with data from other
+call number fields to make them searchable.  Instructions for using this plugin can be found in the OpenBiblio Plugin manual.
 
 
 === Special subfields
@@ -37,11 +38,23 @@ If you are seeing the wrong type of call number (e.g. you see a LoC call number 
 somebody with admin privileges will need to change the Admin -> Online Options settings.
 +
 . Click Submit.
-. Enter copy information as needed. Click Update.
+
+include::item_cataloging.txt[]
 
 == Original cataloging
 
-Instructions coming soon
+You may not be able to find a record from another library.  To do so, go to Cataloging -> New Item and click the _Manual Entry_ button.
+
+. Select the appropriate media type. The form will then show the fields appropriate to that media type.
++
+NOTE: Anybody with the Admin permission may add, remove, or modify which fields are shown in this screen by going to
+Admin -> Biblio Fields.
++
+. Be sure to fill in any fields marked with the * character.  These fields must be filled in before you finish your record.
+. If you would like to edit your record further before displaying it to your patrons, unselect the _Show in OPAC_
+checkbox. With this unselected, members will not be able to view your record.  You may change this setting at a later time.
+
+include::item_cataloging.txt[]
 
 == Importing MARC records
 
@@ -49,7 +62,7 @@ By default, the MARC record importer imports items as a "test load,"
 so you can verify that there are no errors.  You can set "test load"
 to false once you are satisfied with your settings and file.
 
-NOTE: MARC records can use any one of a number of different encoding schemes.  Before you import any MARC records, be sure that your administrator has selected the correct
+TIP: MARC records can use any one of a number of different encoding schemes.  Before you import any MARC records, be sure that your administrator has selected the correct
 character set in Admin -> Character Set.
 
 == Importing CSV records
