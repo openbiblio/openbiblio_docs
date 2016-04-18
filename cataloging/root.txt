@@ -49,6 +49,9 @@ By default, the MARC record importer imports items as a "test load,"
 so you can verify that there are no errors.  You can set "test load"
 to false once you are satisfied with your settings and file.
 
+NOTE: MARC records can use any one of a number of different encoding schemes.  Before you import any MARC records, be sure that your administrator has selected the correct
+character set in Admin -> Character Set.
+
 == Importing CSV records
 
 === The CSV File 
