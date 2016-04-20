@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mysql-autodoc obib -Hlocalhost -uobib -p
 a2x root.txt
 asciidoc -a toc -a icons root.txt
 for file in *; do
