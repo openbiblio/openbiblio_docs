@@ -181,7 +181,7 @@ mkdir plugins/excitingPlugin
 [source,php]
 ----
 <?php
-Nav::node('tools/excitingPlugin', 'Exciting Plugin', '../plugin_excitingPlugin/excitingPluginForms.php');
+Nav::node('tools/excitingPlugin', 'Exciting Plugin', '../plugin_excitingPlugin/excitingForms.php');
 ----
 +
 . If you'd like to use Obib's localization framework but need to localize some more terms, create a file called tran.tran. You can use this to add new terms to your locale.
