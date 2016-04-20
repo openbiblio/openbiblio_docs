@@ -1,0 +1,14 @@
+== Showing a member's circulation history
+ 
+OpenBiblio stores information about copies that a member has checked out previously.  You can access this list
+after you retrieve a member account.
+
+include::retrieving.txt[]
+
+=== Viewing the history
+
+Click on the History button, near the top of the screen.
+
+NOTE: Unlike some ILSs, OpenBiblio does not anonymize circulations after a certain period of time has elapsed.
+Please know that this can be considered a member confidentiality issue in some jurisdictions.
+
