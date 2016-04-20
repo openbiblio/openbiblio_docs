@@ -1,0 +1,3 @@
+== A successful initial configuration
+
+. Go to Admin -> Library settings. Set the character set to _utf8_.
