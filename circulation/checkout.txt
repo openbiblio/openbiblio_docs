@@ -12,5 +12,5 @@ TIP: Anybody with administrator privileges can turn member barcodes on using Too
 === Chcecking out an item
 
 . Type or scan the item barcode into the Check Out field.
+. If you would like to see what a member has checked out and when they are due, click "History".
 
-Something about due dates, etc.
