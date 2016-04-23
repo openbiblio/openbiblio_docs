@@ -1,8 +1,17 @@
 = Research
 
-OpenBiblio can help with your research.
+This menu area is intended for patrons or staff who do not have access to either the catalogging or cuirculation facilities.
+
+== Local search
+This menu implements an on-line card-catalog for the library.
 
 == DOI search
-
 A DOI (digital object identifier) can refer to an article, journal, digitized archival object, or any other digital object that may help you in your research.  If you have one of these identifiers, you can paste it into the DOI search box, and OpenBiblio will open the relevant resource in a new tab for you.
 
+== Cover Photos
+A viewer of all library material for which photos are available. The format of the pages displayed are set using 
+the Cover Photo tab of Library Settings under the Admin Menu. Clicking the title of the item shown will bring up 
+the usual descriptive information. Nothing may be edited from these pages.
+
+== Cart
+Provides a list of material awaiting shelving. Again, clicking on an item will bring up the usual descriptive mataterial.
