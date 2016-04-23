@@ -1,6 +1,6 @@
 === Pull-Down List Manager (List Manager)
 
-This plug-in is intended to provide a developer with a simple means to view the contents of pull down list 
+This plug-in is intended to provide a developer with a simple means to view the contents of pull down lists 
 that are used in various locations throughout OB.
 
-No means are provide at this time to modify these lists.
+No means are provide at this time to modify these lists; use phpMyAdmin or equiv for that purpose.
