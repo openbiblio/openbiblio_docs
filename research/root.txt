@@ -1,6 +1,6 @@
 = Research
 
-This menu area is intended for patrons or staff who do not have access to either the catalogging or cuirculation facilities.
+This menu area is intended for patrons or staff who do not have access to either the cataloging or circulation facilities.
 
 == Local search
 This menu implements an on-line card-catalog for the library.
