@@ -188,7 +188,6 @@ Nav::node('tools/excitingPlugin', 'Exciting Plugin', '../plugin_excitingPlugin/e
 +
 TIP: Plugins already have all of the exciting localization ability built in.  However, note that you cannot override localized term definitions within tran.tran.
 +
-+
 WARNING: There is not yet a place to specify localized terms for plugins.
 +
 . Turn on your plugin using Tools -> Plugin Manager.
