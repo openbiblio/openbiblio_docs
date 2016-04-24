@@ -2,6 +2,7 @@
 
 This plug-in is intended to find old abandoned files. 
 The concept here is to find files which:
+
 . are not referred to via any menu
 . are not referred to by any HTML mechanism such as Javascript, CSS, Form Actions, Images, etc.
 . are not referred to by any PHP mechanism such as 'includ'e s or 'require's
