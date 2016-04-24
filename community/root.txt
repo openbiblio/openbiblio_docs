@@ -14,7 +14,16 @@ Reporting bugs
 
 You can report bugs in the bitbucket repository.
 
-Creating plugins
-~~~~~~~~~~~~~~~~
+Contributing code
+~~~~~~~~~~~~~~~~~
 
-Instructions coming soon.
+You can contribute custom plugins, themes, and reports!
+
+If you want to create a new feature for the base OpenBiblio software, start out by proposing your idea on the
+bitbucket issues interface.  If your proposal makes sense and you get some consensus with the other developers,
+you can contribute your code, test it, and contribute it back to the main repository as a pull request.
+
+Contributing documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can find instructions at https://github.com/openbiblio/openbiblio_docs.
