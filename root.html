@@ -764,8 +764,15 @@ asciidoc.install(2);
 <div class="paragraph"><p>You can report bugs in the bitbucket repository.</p></div>
 </div>
 <div class="sect3">
-<h4 id="_creating_plugins">Creating plugins</h4>
-<div class="paragraph"><p>Instructions coming soon.</p></div>
+<h4 id="_contributing_code">Contributing code</h4>
+<div class="paragraph"><p>You can contribute custom plugins, themes, and reports!</p></div>
+<div class="paragraph"><p>If you want to create a new feature for the base OpenBiblio software, start out by proposing your idea on the
+bitbucket issues interface.  If your proposal makes sense and you get some consensus with the other developers,
+you can contribute your code, test it, and contribute it back to the main repository as a pull request.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_contributing_documentation">Contributing documentation</h4>
+<div class="paragraph"><p>You can find instructions at <a href="https://github.com/openbiblio/openbiblio_docs">https://github.com/openbiblio/openbiblio_docs</a>.</p></div>
 </div>
 </div>
 </div>
@@ -776,9 +783,14 @@ asciidoc.install(2);
 <h3 id="_system_requirements">System requirements</h3>
 <div class="paragraph"><p>We have tested OpenBiblio installation on Windows 7 and Ubuntu Linux 14.04.</p></div>
 <div class="paragraph"><p>We also plan to test other versions of Windows, Ubuntu Linux 12.04, Debian Linux, Fedora Linux, Mac OSX, and CentOS Linux.</p></div>
-<div class="paragraph"><p>To install OpenBiblio, you will need PHP version 5.4 or higher.  We have not yet tested OpenBiblio on PHP 6.x or 7.x.</p></div>
+<div class="paragraph"><p>To install OpenBiblio, you will need PHP version 5.4 or higher.
+We are actively revising the codebase to make OpenBiblio
+fully compatible with PHP 7.  You are welcome to use OpenBiblio
+with PHP 7, but be aware that you may see
+warning messages.</p></div>
 <div class="paragraph"><p>You will need MySQL.  Not sure of version.</p></div>
-<div class="paragraph"><p>You will also need Apache.</p></div>
+<div class="paragraph"><p>You will also need some Web server program.  OpenBiblio has been tested
+with both Apache and nginx.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_installing_openbiblio_1_0_on_a_windows_computer">Installing OpenBiblio 1.0 on a Windows computer</h3>
@@ -1836,11 +1848,29 @@ that are used in various locations throughout OB.</p></div>
 <div class="sect3">
 <h4 id="_orphan_file_finder_orpahnfiles">Orphan File finder (orpahnFiles)</h4>
 <div class="paragraph"><p>This plug-in is intended to find old abandoned files.
-The concept here is to find files which:
-. are not referred to via any menu
-. are not referred to by any HTML mechanism such as Javascript, CSS, Form Actions, Images, etc.
-. are not referred to by any PHP mechanism such as 'includ&#8217;e s or 'require&#8217;s
-. are not referenced in Object class inheritances.</p></div>
+The concept here is to find files which:</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+are not referred to via any menu
+</p>
+</li>
+<li>
+<p>
+are not referred to by any HTML mechanism such as Javascript, CSS, Form Actions, Images, etc.
+</p>
+</li>
+<li>
+<p>
+are not referred to by any PHP mechanism such as 'includ&#8217;e s or 'require&#8217;s
+</p>
+</li>
+<li>
+<p>
+are not referenced in Object class inheritances.
+</p>
+</li>
+</ol></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
