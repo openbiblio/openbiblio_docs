@@ -108,4 +108,7 @@ In the options box you will need to find the "Show all records" drop down. This 
 
 == Bulk delete records
 
-This functionality does not yet exist.
+This powerful tool will delete any copy barcodes you specify from the database.  You may also choose to delete the bibliographic data relevant to a parent item
+once you have deleted the last copy on an item.
+
+WARNING: This action cannot be undone.
