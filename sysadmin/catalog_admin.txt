@@ -12,7 +12,38 @@ Collections
 
 === Managing displayed fields
 
-Biblio fields
+Each type of media displays certain MARC fields, and can be
+labeled in specific ways.  For example, the field `300$a`
+contains page numbers for book records and number of discs
+for DVDs.  Therefore, you might want to label these in
+different ways to create the clearest experience for your
+members and staff.
+
+==== Adding and re-arranging displayed fields
+
+. Go to Admin -> Media Types. Make sure that you have the
+appropriate media types listed.
+. Go to Admin -> Biblio fields.
+. Choose the media type you are interested in.
+. Click "Add to / Modify Layout".
+. To add new fields, use the dropdown menus in
+the right column to choose the field that you would
+like. You may include the same field multiple times
+if you wish.
+. To re-arrange fields, drag and drop the entries in
+the right column until you are satisfied.
+. When everything looks good, click "Save Layout".
+
+==== Removing and renaming displayed fields
+. Go to Admin -> Biblio fields.
+. Choose the media type you are interested in.
+. Click the "Edit" button next to the field
+you wish to remove or rename.
+. Here you can change the "label" that displays
+to members and staff, as well as data standards
+for this field.
+
+
 
 === Managing custom fields for copies
 
