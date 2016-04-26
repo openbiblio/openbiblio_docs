@@ -9,11 +9,8 @@ This manual provides documentation for users of OpenBiblio 1.0, an automated lib
 
 OpenBiblio 1.0 has a public OPAC interface and a staff interface. You can successfully use either interface on your computer, tablet, or phone.
 
+include::about.txt[]
 
-About This Documentation
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-This documentation uses ASCIIDoc, using a workflow borrowed from the Evergreen ILS Documentation Interest Group.
 
 :leveloffset: +1
 
@@ -36,3 +33,4 @@ include::plugins/root.txt[]
 include::recipes/root.txt[]
 
 :leveloffset: -1
+

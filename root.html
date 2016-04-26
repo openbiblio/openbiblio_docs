@@ -745,9 +745,37 @@ asciidoc.install(2);
 <div class="sectionbody">
 <div class="paragraph"><p>This manual provides documentation for users of OpenBiblio 1.0, an automated library system.</p></div>
 <div class="paragraph"><p>OpenBiblio 1.0 has a public OPAC interface and a staff interface. You can successfully use either interface on your computer, tablet, or phone.</p></div>
-<div class="sect2">
-<h3 id="_about_this_documentation">About This Documentation</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_about_this_documentation">About this documentation</h2>
+<div class="sectionbody">
 <div class="paragraph"><p>This documentation uses ASCIIDoc, using a workflow borrowed from the Evergreen ILS Documentation Interest Group.</p></div>
+<div class="sect2">
+<h3 id="_licensing">Licensing</h3>
+<div class="paragraph"><p>This work is licensed under a
+<a href="http://creativecommons.org/licenses/by/4.0/">Creative
+Commons Attribution 4.0 License</a>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_contributors">Contributors</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+Megan Bell
+</p>
+</li>
+<li>
+<p>
+Fred LaPlante
+</p>
+</li>
+<li>
+<p>
+Jane Sandberg
+</p>
+</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -1244,7 +1272,85 @@ password.</p></div>
 </div>
 <div class="sect3">
 <h4 id="_managing_displayed_fields">Managing displayed fields</h4>
-<div class="paragraph"><p>Biblio fields</p></div>
+<div class="paragraph"><p>Each type of media displays certain MARC fields, and can be
+labeled in specific ways.  For example, the field <code>300$a</code>
+contains page numbers for book records and number of discs
+for DVDs.  Therefore, you might want to label these in
+different ways to create the clearest experience for your
+members and staff.</p></div>
+<div class="sect4">
+<h5 id="_adding_and_re_arranging_displayed_fields">Adding and re-arranging displayed fields</h5>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Go to Admin &#8594; Media Types. Make sure that you have the
+appropriate media types listed.
+</p>
+</li>
+<li>
+<p>
+Go to Admin &#8594; Biblio fields.
+</p>
+</li>
+<li>
+<p>
+Choose the media type you are interested in.
+</p>
+</li>
+<li>
+<p>
+Click "Add to / Modify Layout".
+</p>
+</li>
+<li>
+<p>
+To add new fields, use the dropdown menus in
+the right column to choose the field that you would
+like. You may include the same field multiple times
+if you wish.
+</p>
+</li>
+<li>
+<p>
+To re-arrange fields, drag and drop the entries in
+the right column until you are satisfied.
+</p>
+</li>
+<li>
+<p>
+When everything looks good, click "Save Layout".
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect4">
+<h5 id="_removing_and_renaming_displayed_fields">Removing and renaming displayed fields</h5>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Go to Admin &#8594; Biblio fields.
+</p>
+</li>
+<li>
+<p>
+Choose the media type you are interested in.
+</p>
+</li>
+<li>
+<p>
+Click the "Edit" button next to the field
+you wish to remove or rename.
+</p>
+</li>
+<li>
+<p>
+Here you can change the "label" that displays
+to members and staff, as well as data standards
+for this field.
+</p>
+</li>
+</ol></div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_managing_custom_fields_for_copies">Managing custom fields for copies</h4>
@@ -2195,7 +2301,7 @@ Go to Admin &#8594; Library settings. Set the character set to <em>utf8</em>.
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2016-04-16 10:36:24 PDT
+ 2016-04-25 18:05:57 PDT
 </div>
 </div>
 </body>

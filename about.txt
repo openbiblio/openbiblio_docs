@@ -1,0 +1,8 @@
+== About this documentation
+
+This documentation uses ASCIIDoc, using a workflow borrowed from the Evergreen ILS Documentation Interest Group.
+
+include::licensing.txt[]
+
+include::contributors.txt[]
+
