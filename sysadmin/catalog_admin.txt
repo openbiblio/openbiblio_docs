@@ -1,10 +1,35 @@
 == Managing your catalog
 
-This section describes the following settings in the Admin menu.
+This section describes settings in the Admin menu related to
+cataloging.
 
 === Managing media types
 
-Media types link
+You can access media types in Admin -> Media Types.
+
+There are several settings you can choose for any Media
+Type in your catalog, which are listed below.
+
+. _Description_ - a human-readable name for what type of
+material you are describing.
+. _Checkout Limit_ - the maximum number of this type of
+item a member may check out.
+. _Default_ - If this is set to _Y_, the cataloging module
+will default to the current media type.
++
+NOTE: You should be careful to only set one media type to
+be default, or else the cataloging module will run into
+errors
++
+. _Search display lines_ - This setting governs how long
+search results views will be.  If you choose 5, for example,
+the search results page will display the first 5 MARC
+fields for items of this media type (based on the order
+you define in the Admin -> Biblio fields interface).
+. _Image file_ - You may upload your own icon image for
+this media type here.
+
+
 
 === Managing collections
 
