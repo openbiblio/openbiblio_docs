@@ -1,4 +1,15 @@
-﻿= Check In
+﻿== Checking in materials
 
-blah blah
+. Click on Circulation on the left side of the screen.
+. Click Check In.
+. Type or scan the barcode number.
+. If the book was checked out, it will be added to the shelving cart, which is represented by a list at the bottom of the screen.
 
+NOTE: Check in only works on items that are checked out.
+It will not remove other statuses, such as "lost".
+
+After you check in your materials, you will probably want to
+empty the shelving cart as well.
+
+Does the screen display fines if the item being checked in
+is overdue?

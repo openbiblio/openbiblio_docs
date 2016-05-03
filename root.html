@@ -1261,10 +1261,58 @@ password.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_managing_your_catalog">Managing your catalog</h3>
-<div class="paragraph"><p>This section describes the following settings in the Admin menu.</p></div>
+<div class="paragraph"><p>This section describes settings in the Admin menu related to
+cataloging.</p></div>
 <div class="sect3">
 <h4 id="_managing_media_types">Managing media types</h4>
-<div class="paragraph"><p>Media types link</p></div>
+<div class="paragraph"><p>You can access media types in Admin &#8594; Media Types.</p></div>
+<div class="paragraph"><p>There are several settings you can choose for any Media
+Type in your catalog, which are listed below.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+<em>Description</em> - a human-readable name for what type of
+material you are describing.
+</p>
+</li>
+<li>
+<p>
+<em>Checkout Limit</em> - the maximum number of this type of
+item a member may check out.
+</p>
+</li>
+<li>
+<p>
+<em>Default</em> - If this is set to <em>Y</em>, the cataloging module
+will default to the current media type.
+</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">You should be careful to only set one media type to
+be default, or else the cataloging module will run into
+errors</td>
+</tr></table>
+</div>
+</li>
+<li>
+<p>
+<em>Search display lines</em> - This setting governs how long
+search results views will be.  If you choose 5, for example,
+the search results page will display the first 5 MARC
+fields for items of this media type (based on the order
+you define in the Admin &#8594; Biblio fields interface).
+</p>
+</li>
+<li>
+<p>
+<em>Image file</em> - You may upload your own icon image for
+this media type here.
+</p>
+</li>
+</ol></div>
 </div>
 <div class="sect3">
 <h4 id="_managing_collections">Managing collections</h4>
@@ -1522,9 +1570,19 @@ If the book was checked out, it will be added to the shelving cart, which is rep
 </p>
 </li>
 </ol></div>
-<div class="paragraph"><p>What if it is a weird status, does it change to regular?</p></div>
-<div class="paragraph"><p>How do you empty the shelving cart?</p></div>
-<div class="paragraph"><p>What if there is a hold or fines on the item?</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">Check in only works on items that are checked out.
+It will not remove other statuses, such as "lost".</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>After you check in your materials, you will probably want to
+empty the shelving cart as well.</p></div>
+<div class="paragraph"><p>Does the screen display fines if the item being checked in
+is overdue?</p></div>
 </div>
 <div class="sect2">
 <h3 id="_showing_a_member_8217_s_circulation_history">Showing a member&#8217;s circulation history</h3>
