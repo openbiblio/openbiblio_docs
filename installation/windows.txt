@@ -17,7 +17,9 @@ Note that turning your personal computer into a server carries some risks, espec
 . Click on "Edit Privileges" next to root.
 . Click on "Change Password".
 . Click on Add user.
-. Choose a memorable username, like obiblio, and enter it.  In the host field, enter "localhost".  Create a long, secure, memorable password.
+. Choose a memorable username, like _obiblio_, and enter it.  We suggest using a name that only contains letters, numbers, and underscore characters.
+. In the host field, enter "localhost".
+. Create a long, secure, memorable password.
 . Under "Database for user", there should be a checkbox for "Create database with same name and grant all privileges".  Check this box.
 . Click go.
 
