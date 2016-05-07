@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mysql-autodoc obib -Hlocalhost -uobib -p
+mysql-autodoc obib -Hlocalhost -uobib -p -fschema.html
 a2x --dblatex-opts "-P latex.output.revhistory=0" root.txt
 asciidoc -a toc -a icons root.txt
 for file in *; do
