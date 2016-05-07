@@ -17,3 +17,14 @@ To change the password of a staff account, go to Admin -> Staff Admin. Click
 the pwd button next to the account you are working with.  Enter the new
 password.
 
+=== Deleting users
+
+Anybody with the admin permission may delete a user. 
+
+. Go to Admin -> Staff Admin.
+. Click the edit button next to the account you are working with.
+. Verify that you are deleting the correct user.
+. Click the delete button.
+
+WARNING: Any user with the admin permission may delete their own account.
+
