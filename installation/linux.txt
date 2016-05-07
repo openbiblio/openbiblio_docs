@@ -12,7 +12,7 @@ On Ubuntu:
 
 [source,bash]
 ----
-sudo apt-get install apache2 php5 mysql-server yaz php5-dev php5-mysql php-pear libyaz-4 unzip
+sudo apt-get install apache2 php5 mysql-server yaz php5-dev php5-mysql php-pear libyaz4 unzip
 ----
 
 TIP: This will prompt you to choose a root password for MySQL.  Make sure it is a secure one!
