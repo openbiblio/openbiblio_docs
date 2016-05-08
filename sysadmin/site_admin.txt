@@ -29,7 +29,8 @@ any copies at this site.
 NOTE: OpenBiblio does not allow you to delete the site that you are
 currently signed in as.
 
-WARNING: If you delete a site that has copies attached, they will show as
-"Undefined" in the system.
-
+NOTE: OpenBiblio checks to make sure that there are no copies attached
+to the site you wish to delete.  If there are still copies attached, you
+will have to delete them or move them to a different site before you can
+delete the site.
 
