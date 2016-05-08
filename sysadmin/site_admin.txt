@@ -26,9 +26,8 @@ any copies at this site.
 . Go to Admin -> Sites.
 . Delete the site.
 
-WARNING: Don't delete a site when you are logged in, or you will cause a
-permanent error state that won't be resolved until you manually add
-the site back into the database.
+NOTE: OpenBiblio does not allow you to delete the site that you are
+currently signed in as.
 
 WARNING: If you delete a site that has copies attached, they will show as
 "Undefined" in the system.
