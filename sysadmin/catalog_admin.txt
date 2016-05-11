@@ -33,7 +33,37 @@ this media type here.
 
 === Managing collections
 
-Collections
+You can access media types in Admin -> Collections.
+
+There are several settings you can choose for any 
+Collection in your catalog, which are listed below.
+
+. _Description_ - a human-readable name for your
+collection, such as "Fiction," "Children's books,"
+or "Genealogy Room."  We recommend that each
+collection correspond to a physical area in your
+library.
+. _Item count_ - this field is calculated automatically
+by OpenBiblio based on how many items exist in this
+collection.
+. _Collection type_ - this field allows you to decide
+whether items in this collection should circulate or
+be distributed.
+. _Default_ - If this is set to _Y_, the cataloging module
+will default to the current collection.
++
+NOTE: You should be careful to only set one collection to
+be default, or else the cataloging module will run into
+errors.
++
+. _Days due back_ - the length of the loan period in days for items
+from this collection.  You may set this to 0 if you would
+not like items to circulate.
+. _Daily late fee_ - The overdue fee for each day an item is held
+overdue.
+
+
+
 
 === Managing displayed fields
 
