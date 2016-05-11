@@ -26,5 +26,7 @@ Anybody with the admin permission may delete a user.
 . Verify that you are deleting the correct user.
 . Click the delete button.
 
-WARNING: Any user with the admin permission may delete their own account.
+WARNING: You may delete your account if you have the admin permission.
+Please be very careful when deleting staff members, particularly your
+own account.
 
