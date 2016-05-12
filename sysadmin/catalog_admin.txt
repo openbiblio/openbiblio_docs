@@ -98,12 +98,36 @@ you wish to remove or rename.
 to members and staff, as well as data standards
 for this field.
 
-
-
 === Managing custom fields for copies
 
-Biblio copy fields
+OpenBiblio offers some great flexibility for
+describing your physical items.  In fact, you
+can add any field you'd like by going to Admin
+-> Biblio Copy Fields.
+
+Any fields you enter here will be displayed to
+your staff members as optional fields.
 
 === Managing copy catalog options
 
-Z39.50 and SRU
+OpenBiblio's lookup feature saves catalogers
+a lot of time and hassle by importing
+pre-existing biblio records from other libraries
+using the SRU or z39.50 protocols.
+
+==== Initial setup
+
+. Go to Admin -> Online Options.
+. Choose the protocol.  If you have installed yaz
+correctly, we recommend that you select YAZ from
+this menu.  This will use the z39.50 protocol,
+which is more widely used than the SRU protocol.
+. Choose the maximum number of hits to display.
+. Choose the timeout variable: the amount of time
+OpenBiblio should wait for a response from the
+lookup host.
+. In "keep dashes", choose whether or not you
+would like to keep hyphen characters in ISBNs
+that your catalogers enter.
+
+
