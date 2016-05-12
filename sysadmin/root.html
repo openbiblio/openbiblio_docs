@@ -825,10 +825,12 @@ currently signed in as.</td>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Warning</div>
+<div class="title">Note</div>
 </td>
-<td class="content">If you delete a site that has copies attached, they will show as
-"Undefined" in the system.</td>
+<td class="content">OpenBiblio checks to make sure that there are no copies attached
+to the site you wish to delete.  If there are still copies attached, you
+will have to delete them or move them to a different site before you can
+delete the site.</td>
 </tr></table>
 </div>
 </div>
@@ -888,7 +890,9 @@ Click the delete button.
 <td class="icon">
 <div class="title">Warning</div>
 </td>
-<td class="content">Any user with the admin permission may delete their own account.</td>
+<td class="content">You may delete your account if you have the admin permission.
+Please be very careful when deleting staff members, particularly your
+own account.</td>
 </tr></table>
 </div>
 </div>
@@ -952,7 +956,63 @@ this media type here.
 </div>
 <div class="sect2">
 <h3 id="_managing_collections">Managing collections</h3>
-<div class="paragraph"><p>Collections</p></div>
+<div class="paragraph"><p>You can access media types in Admin &#8594; Collections.</p></div>
+<div class="paragraph"><p>There are several settings you can choose for any
+Collection in your catalog, which are listed below.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+<em>Description</em> - a human-readable name for your
+collection, such as "Fiction," "Children&#8217;s books,"
+or "Genealogy Room."  We recommend that each
+collection correspond to a physical area in your
+library.
+</p>
+</li>
+<li>
+<p>
+<em>Item count</em> - this field is calculated automatically
+by OpenBiblio based on how many items exist in this
+collection.
+</p>
+</li>
+<li>
+<p>
+<em>Collection type</em> - this field allows you to decide
+whether items in this collection should circulate or
+be distributed.
+</p>
+</li>
+<li>
+<p>
+<em>Default</em> - If this is set to <em>Y</em>, the cataloging module
+will default to the current collection.
+</p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">You should be careful to only set one collection to
+be default, or else the cataloging module will run into
+errors.</td>
+</tr></table>
+</div>
+</li>
+<li>
+<p>
+<em>Days due back</em> - the length of the loan period in days for items
+from this collection.  You may set this to 0 if you would
+not like items to circulate.
+</p>
+</li>
+<li>
+<p>
+<em>Daily late fee</em> - The overdue fee for each day an item is held
+overdue.
+</p>
+</li>
+</ol></div>
 </div>
 <div class="sect2">
 <h3 id="_managing_displayed_fields">Managing displayed fields</h3>
@@ -1038,11 +1098,56 @@ for this field.
 </div>
 <div class="sect2">
 <h3 id="_managing_custom_fields_for_copies">Managing custom fields for copies</h3>
-<div class="paragraph"><p>Biblio copy fields</p></div>
+<div class="paragraph"><p>OpenBiblio offers some great flexibility for
+describing your physical items.  In fact, you
+can add any field you&#8217;d like by going to Admin
+&#8594; Biblio Copy Fields.</p></div>
+<div class="paragraph"><p>Any fields you enter here will be displayed to
+your staff members as optional fields.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_managing_copy_catalog_options">Managing copy catalog options</h3>
-<div class="paragraph"><p>Z39.50 and SRU</p></div>
+<div class="paragraph"><p>OpenBiblio&#8217;s lookup feature saves catalogers
+a lot of time and hassle by importing
+pre-existing biblio records from other libraries
+using the SRU or z39.50 protocols.</p></div>
+<div class="sect3">
+<h4 id="_initial_setup">Initial setup</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Go to Admin &#8594; Online Options.
+</p>
+</li>
+<li>
+<p>
+Choose the protocol.  If you have installed yaz
+correctly, we recommend that you select YAZ from
+this menu.  This will use the z39.50 protocol,
+which is more widely used than the SRU protocol.
+</p>
+</li>
+<li>
+<p>
+Choose the maximum number of hits to display.
+</p>
+</li>
+<li>
+<p>
+Choose the timeout variable: the amount of time
+OpenBiblio should wait for a response from the
+lookup host.
+</p>
+</li>
+<li>
+<p>
+In "keep dashes", choose whether or not you
+would like to keep hyphen characters in ISBNs
+that your catalogers enter.
+</p>
+</li>
+</ol></div>
+</div>
 </div>
 </div>
 </div>
@@ -1143,7 +1248,7 @@ Add translations to trans.php.
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2016-04-16 17:01:02 PDT
+ 2016-05-11 15:34:16 PDT
 </div>
 </div>
 </body>
