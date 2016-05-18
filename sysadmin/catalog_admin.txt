@@ -128,6 +128,24 @@ OpenBiblio should wait for a response from the
 lookup host.
 . In "keep dashes", choose whether or not you
 would like to keep hyphen characters in ISBNs
-that your catalogers enter.
+that your catalogers enter. We recommend that
+you set this to false, because most z39.50 and
+SRU servers index ISBNs without hyphens.
+. In "call number type", choose the call number
+scheme that you'd like to use.  OpenBiblio
+will then attempt to retrieve a call number
+of that type from the remote server to add
+to a 099 field.
+. Not sure what Auto Dewey does
+. Default Dewey provides a default call number
+for items you catalog using the Dewey Decimal
+Classification, in case the remote server does
+not provide useful Dewey Call Number information.
+. Auto Cutter will automatically generate a
+Cutter number for you.
+. Cutter Type asks you to choose between LoC cutters
+and Cutter-Sanborn cutters.
+. Noise words are common words that you would like
+to remove from your queries to get better results.
 
 

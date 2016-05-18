@@ -34,3 +34,8 @@ to the site you wish to delete.  If there are still copies attached, you
 will have to delete them or move them to a different site before you can
 delete the site.
 
+=== Library-specific settings
+
+If you'd like the staff view of OpenBiblio to include 
+your library's hours and phone number, go to Admin -> Library Settings
+-> Library.  Check the "Show Library Info on Staff Pages" box.

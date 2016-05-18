@@ -26,3 +26,13 @@ This section will discuss other server-level considerations.
 === Logs
 
 This section will mention logs of particular interest to OpenBiblio administrators.
+
+=== Not yet implemented features
+
+==== OPAC URL
+
+In Admin -> Library Settings -> Miscellaneous, you can set the OPAC URL.  However, this is currently not used anywhere in OpenBiblio.
+
+==== Requests
+
+In Admin -> Library Settings -> Requests, you can set the default from and to email addresses, as well as the default subject for emailed requests.
