@@ -1,4 +1,5 @@
 === Using the OpenBiblio installer.
 
+. Fill out the required information using the parameters of your MySQL setup. The hostname should be the IP address and port in the format 192.168.333.333:3388, where 192.168.333.333 is the IP address and 3388 is port number.
 . Install test data if you would like.
 . Log in to your new OpenBiblio system.  The default user is admin with password admin.

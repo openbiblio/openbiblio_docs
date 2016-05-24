@@ -30,13 +30,8 @@ Note that turning your personal computer into a server carries some risks, espec
 . Note the Document Root field. This is the folder on your computer where OpenBiblio will be running.
 . Open the DB SERVER settings.  Note the parameters area.
 . Download OpenBiblio and place the files into the Document Root folder.
-. Open the document root folder.
-. Locate the file database_constants_deploy.php. Make a copy of this file called database_constants.php.
-. Edit your new database_constants.php file.  Enter the database, username, and password you created in PhpMyAdmin.  The hostname should be the IP address and port that you noticed in the DB SERVER settings in the format 192.168.333.333:3388, where 192.168.333.333 is the IP address and 3388 is port number.
-. Save the file.
 . Go back to the EasyPHP dashboard and open the HTTP SERVER settings once more.
-. There is a link there to open up OpenBiblio under the URL field.
-. Add /install to the end of the URL in your browser. The installer should run.
+. There is a link there to open up OpenBiblio under the URL field. Click on it.  The installer should appear.
 
 include::obib-installer.txt[]
 

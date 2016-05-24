@@ -88,11 +88,7 @@ GRANT ALL PRIVILEGES ON obiblio.* TO obib_user@localhost IDENTIFIED BY 'obib_pas
 ----
 wget -O obib.zip https://bitbucket.org/mstetson/obiblio-1.0-wip/get/26f88507b580.zip
 unzip obib.zip
-cd new-obib-dir
-cp database_constants_deploy.php database_constants.php
 ----
-
-Edit database_constants.php with the text editor of your choice.
 
 Delete the default "It Works" page from /var/www/html.
 
