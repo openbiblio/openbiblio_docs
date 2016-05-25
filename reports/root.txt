@@ -4,11 +4,18 @@ OpenBiblio has a very flexible report system.
 
 == Running a report
 
-Do it!
+. Click on Reports.
+. Find the report you'd like to run and click on it.
+. OpenBiblio will ask you to add any additional
+necessary specifications.
+. You may sort the report by clicking on the headings.
 
 === Exporting to different formats
 
-It seems like PDF isn't working :-(
+You may export your report results in PDF, CSV, or MARC
+formats.  If you'd like to print the results, we recommend
+the PDF format (found after you run a report under Reports ->
+Report Results -> Print List).
 
 == Adding new reports
 
