@@ -834,6 +834,12 @@ delete the site.</td>
 </tr></table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_library_specific_settings">Library-specific settings</h3>
+<div class="paragraph"><p>If you&#8217;d like the staff view of OpenBiblio to include
+your library&#8217;s hours and phone number, go to Admin &#8594; Library Settings
+&#8594; Library.  Check the "Show Library Info on Staff Pages" box.</p></div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -908,7 +914,7 @@ cataloging.</p></div>
 <div class="paragraph"><p>You can access media types in Admin &#8594; Media Types.</p></div>
 <div class="paragraph"><p>There are several settings you can choose for any Media
 Type in your catalog, which are listed below.</p></div>
-<div class="olist arabic"><ol class="arabic">
+<div class="ulist"><ul>
 <li>
 <p>
 <em>Description</em> - a human-readable name for what type of
@@ -952,14 +958,14 @@ you define in the Admin &#8594; Biblio fields interface).
 this media type here.
 </p>
 </li>
-</ol></div>
+</ul></div>
 </div>
 <div class="sect2">
 <h3 id="_managing_collections">Managing collections</h3>
 <div class="paragraph"><p>You can access media types in Admin &#8594; Collections.</p></div>
 <div class="paragraph"><p>There are several settings you can choose for any
 Collection in your catalog, which are listed below.</p></div>
-<div class="olist arabic"><ol class="arabic">
+<div class="ulist"><ul>
 <li>
 <p>
 <em>Description</em> - a human-readable name for your
@@ -1012,7 +1018,7 @@ not like items to circulate.
 overdue.
 </p>
 </li>
-</ol></div>
+</ul></div>
 </div>
 <div class="sect2">
 <h3 id="_managing_displayed_fields">Managing displayed fields</h3>
@@ -1111,17 +1117,16 @@ your staff members as optional fields.</p></div>
 a lot of time and hassle by importing
 pre-existing biblio records from other libraries
 using the SRU or z39.50 protocols.</p></div>
+<div class="paragraph"><p>You must complete these configurations before using
+the lookup features.</p></div>
 <div class="sect3">
-<h4 id="_initial_setup">Initial setup</h4>
+<h4 id="_basic_configuration">Basic configuration</h4>
+<div class="paragraph"><p>To access these options, go to Admin &#8594;
+Online Options.</p></div>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Go to Admin &#8594; Online Options.
-</p>
-</li>
-<li>
-<p>
-Choose the protocol.  If you have installed yaz
+<em>Online protocol:</em>  If you have installed yaz
 correctly, we recommend that you select YAZ from
 this menu.  This will use the z39.50 protocol,
 which is more widely used than the SRU protocol.
@@ -1129,24 +1134,84 @@ which is more widely used than the SRU protocol.
 </li>
 <li>
 <p>
-Choose the maximum number of hits to display.
+<em>Maximum hits:</em> the number of hits to display to catalogers.
 </p>
 </li>
 <li>
 <p>
-Choose the timeout variable: the amount of time
+<em>Timeout:</em> the amount of time
 OpenBiblio should wait for a response from the
 lookup host.
 </p>
 </li>
 <li>
 <p>
-In "keep dashes", choose whether or not you
+<em>Keep dashes:</em> This setting determines whether or not you
 would like to keep hyphen characters in ISBNs
-that your catalogers enter.
+that your catalogers enter. We recommend that
+you set this to false, because most z39.50 and
+SRU servers index ISBNs without hyphens.
+</p>
+</li>
+<li>
+<p>
+<em>Call number type:</em> the call number
+scheme that you&#8217;d like to use.  OpenBiblio
+will then attempt to retrieve a call number
+of that type from the remote server to add
+to a 099 field.
+</p>
+</li>
+<li>
+<p>
+Not sure what Auto Dewey does
+</p>
+</li>
+<li>
+<p>
+<em>Default Dewey</em> provides a default call number
+for items you catalog using the Dewey Decimal
+Classification, in case the remote server does
+not provide useful Dewey Call Number information.
+</p>
+</li>
+<li>
+<p>
+<em>Auto Cutter</em> will automatically generate a
+Cutter number for you.
+</p>
+</li>
+<li>
+<p>
+<em>Cutter Type</em> asks you to choose between LoC cutters
+and Cutter-Sanborn cutters.
+</p>
+</li>
+<li>
+<p>
+<em>Noise words</em> are common words that you would like
+to remove from your queries to get better results.
+</p>
+</li>
+<li>
+<p>
+<em>Auto collection</em> will automatically put new copies
+in your default collection.
+</p>
+</li>
+<li>
+<p>
+<em>Fiction name</em> will be the initial part of any call
+number for fiction books, which typically do not use
+formal call numbers.
 </p>
 </li>
 </ol></div>
+</div>
+<div class="sect3">
+<h4 id="_server_by_server_configuration">Server-by-server configuration</h4>
+<div class="paragraph"><p>You will also need to configure each remote server
+in Admin &#8594; Online Hosts.</p></div>
 </div>
 </div>
 </div>
@@ -1241,6 +1306,17 @@ Add translations to trans.php.
 <h3 id="_logs">Logs</h3>
 <div class="paragraph"><p>This section will mention logs of particular interest to OpenBiblio administrators.</p></div>
 </div>
+<div class="sect2">
+<h3 id="_not_yet_implemented_features">Not yet implemented features</h3>
+<div class="sect3">
+<h4 id="_opac_url">OPAC URL</h4>
+<div class="paragraph"><p>In Admin &#8594; Library Settings &#8594; Miscellaneous, you can set the OPAC URL.  However, this is currently not used anywhere in OpenBiblio.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_requests">Requests</h4>
+<div class="paragraph"><p>In Admin &#8594; Library Settings &#8594; Requests, you can set the default from and to email addresses, as well as the default subject for emailed requests.</p></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1248,7 +1324,7 @@ Add translations to trans.php.
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2016-05-11 15:34:16 PDT
+ 2016-05-17 19:05:57 PDT
 </div>
 </div>
 </body>

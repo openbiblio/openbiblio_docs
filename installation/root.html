@@ -880,37 +880,12 @@ Download OpenBiblio and place the files into the Document Root folder.
 </li>
 <li>
 <p>
-Open the document root folder.
-</p>
-</li>
-<li>
-<p>
-Locate the file database_constants_deploy.php. Make a copy of this file called database_constants.php.
-</p>
-</li>
-<li>
-<p>
-Edit your new database_constants.php file.  Enter the database, username, and password you created in PhpMyAdmin.  The hostname should be the IP address and port that you noticed in the DB SERVER settings in the format 192.168.333.333:3388, where 192.168.333.333 is the IP address and 3388 is port number.
-</p>
-</li>
-<li>
-<p>
-Save the file.
-</p>
-</li>
-<li>
-<p>
 Go back to the EasyPHP dashboard and open the HTTP SERVER settings once more.
 </p>
 </li>
 <li>
 <p>
-There is a link there to open up OpenBiblio under the URL field.
-</p>
-</li>
-<li>
-<p>
-Add /install to the end of the URL in your browser. The installer should run.
+There is a link there to open up OpenBiblio under the URL field. Click on it.  The installer should appear.
 </p>
 </li>
 </ol></div>
@@ -918,6 +893,11 @@ Add /install to the end of the URL in your browser. The installer should run.
 <div class="sect2">
 <h3 id="_using_the_openbiblio_installer">Using the OpenBiblio installer.</h3>
 <div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Fill out the required information using the parameters of your MySQL setup. The hostname should be the IP address and port in the format 192.168.333.333:3388, where 192.168.333.333 is the IP address and 3388 is port number.
+</p>
+</li>
 <li>
 <p>
 Install test data if you would like.
@@ -1055,10 +1035,7 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt>wget -O obib<span style="color: #990000">.</span>zip https<span style="color: #990000">:</span>//bitbucket<span style="color: #990000">.</span>org/mstetson/obiblio-<span style="color: #993399">1.0</span>-wip/get<span style="color: #990000">/</span>26f88507b580<span style="color: #990000">.</span>zip
-unzip obib<span style="color: #990000">.</span>zip
-cd new-obib-dir
-cp database_constants_deploy<span style="color: #990000">.</span>php database_constants<span style="color: #990000">.</span>php</tt></pre></div></div>
-<div class="paragraph"><p>Edit database_constants.php with the text editor of your choice.</p></div>
+unzip obib<span style="color: #990000">.</span>zip</tt></pre></div></div>
 <div class="paragraph"><p>Delete the default "It Works" page from /var/www/html.</p></div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.8
@@ -1078,6 +1055,11 @@ http://www.gnu.org/software/src-highlite -->
 <div class="sect2">
 <h3 id="_using_the_openbiblio_installer_2">Using the OpenBiblio installer.</h3>
 <div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Fill out the required information using the parameters of your MySQL setup. The hostname should be the IP address and port in the format 192.168.333.333:3388, where 192.168.333.333 is the IP address and 3388 is port number.
+</p>
+</li>
 <li>
 <p>
 Install test data if you would like.

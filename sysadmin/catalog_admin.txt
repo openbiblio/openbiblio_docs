@@ -10,23 +10,23 @@ You can access media types in Admin -> Media Types.
 There are several settings you can choose for any Media
 Type in your catalog, which are listed below.
 
-. _Description_ - a human-readable name for what type of
+* _Description_ - a human-readable name for what type of
 material you are describing.
-. _Checkout Limit_ - the maximum number of this type of
+* _Checkout Limit_ - the maximum number of this type of
 item a member may check out.
-. _Default_ - If this is set to _Y_, the cataloging module
+* _Default_ - If this is set to _Y_, the cataloging module
 will default to the current media type.
 +
 NOTE: You should be careful to only set one media type to
 be default, or else the cataloging module will run into
 errors
 +
-. _Search display lines_ - This setting governs how long
+* _Search display lines_ - This setting governs how long
 search results views will be.  If you choose 5, for example,
 the search results page will display the first 5 MARC
 fields for items of this media type (based on the order
 you define in the Admin -> Biblio fields interface).
-. _Image file_ - You may upload your own icon image for
+* _Image file_ - You may upload your own icon image for
 this media type here.
 
 
@@ -38,28 +38,28 @@ You can access media types in Admin -> Collections.
 There are several settings you can choose for any 
 Collection in your catalog, which are listed below.
 
-. _Description_ - a human-readable name for your
+* _Description_ - a human-readable name for your
 collection, such as "Fiction," "Children's books,"
 or "Genealogy Room."  We recommend that each
 collection correspond to a physical area in your
 library.
-. _Item count_ - this field is calculated automatically
+* _Item count_ - this field is calculated automatically
 by OpenBiblio based on how many items exist in this
 collection.
-. _Collection type_ - this field allows you to decide
+* _Collection type_ - this field allows you to decide
 whether items in this collection should circulate or
 be distributed.
-. _Default_ - If this is set to _Y_, the cataloging module
+* _Default_ - If this is set to _Y_, the cataloging module
 will default to the current collection.
 +
 NOTE: You should be careful to only set one collection to
 be default, or else the cataloging module will run into
 errors.
 +
-. _Days due back_ - the length of the loan period in days for items
+* _Days due back_ - the length of the loan period in days for items
 from this collection.  You may set this to 0 if you would
 not like items to circulate.
-. _Daily late fee_ - The overdue fee for each day an item is held
+* _Daily late fee_ - The overdue fee for each day an item is held
 overdue.
 
 
@@ -115,37 +115,51 @@ a lot of time and hassle by importing
 pre-existing biblio records from other libraries
 using the SRU or z39.50 protocols.
 
-==== Initial setup
+You must complete these configurations before using
+the lookup features.
 
-. Go to Admin -> Online Options.
-. Choose the protocol.  If you have installed yaz
+==== Basic configuration
+
+To access these options, go to Admin ->
+Online Options.
+
+. _Online protocol:_  If you have installed yaz
 correctly, we recommend that you select YAZ from
 this menu.  This will use the z39.50 protocol,
 which is more widely used than the SRU protocol.
-. Choose the maximum number of hits to display.
-. Choose the timeout variable: the amount of time
+. _Maximum hits:_ the number of hits to display to catalogers.
+. _Timeout:_ the amount of time
 OpenBiblio should wait for a response from the
 lookup host.
-. In "keep dashes", choose whether or not you
+. _Keep dashes:_ This setting determines whether or not you
 would like to keep hyphen characters in ISBNs
 that your catalogers enter. We recommend that
 you set this to false, because most z39.50 and
 SRU servers index ISBNs without hyphens.
-. In "call number type", choose the call number
+. _Call number type:_ the call number
 scheme that you'd like to use.  OpenBiblio
 will then attempt to retrieve a call number
 of that type from the remote server to add
 to a 099 field.
 . Not sure what Auto Dewey does
-. Default Dewey provides a default call number
+. _Default Dewey_ provides a default call number
 for items you catalog using the Dewey Decimal
 Classification, in case the remote server does
 not provide useful Dewey Call Number information.
-. Auto Cutter will automatically generate a
+. _Auto Cutter_ will automatically generate a
 Cutter number for you.
-. Cutter Type asks you to choose between LoC cutters
+. _Cutter Type_ asks you to choose between LoC cutters
 and Cutter-Sanborn cutters.
-. Noise words are common words that you would like
+. _Noise words_ are common words that you would like
 to remove from your queries to get better results.
+. _Auto collection_ will automatically put new copies
+in your default collection.
+. _Fiction name_ will be the initial part of any call
+number for fiction books, which typically do not use
+formal call numbers.
 
+==== Server-by-server configuration
+
+You will also need to configure each remote server
+in Admin -> Online Hosts.
 
