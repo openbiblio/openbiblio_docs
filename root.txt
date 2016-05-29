@@ -32,5 +32,7 @@ include::plugins/root.txt[]
 
 include::recipes/root.txt[]
 
+include::accessibility/root.txt[]
+
 :leveloffset: -1
 
