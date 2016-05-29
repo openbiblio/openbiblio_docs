@@ -5,3 +5,19 @@ This is a collection of neat tricks and configurations that might be nice for yo
 
 include::startup.txt[]
 
+== Adding a link to your system documentation
+
+You can configure the "Help" link in OpenBiblio's menu to link to any URL you would like.
+This defaults to the official OpenBiblio documentation, but you may wish to replace it with
+some help that is customized for users at your library.
+
+NOTE: You will need access to the SQL database to do this; it has not yet been added to the
+end-user interface.
+
+. Open up the SQL database using the interface of your choice (be it PhpMyAdmin, a command-line
+interface, or any other tool you prefer).
+. Type `UPDATE settings SET value='https://myLibraryDocs.example.com' WHERE name='help_link'`
+(using your own URL instead of `https://myLibraryDocs.example.com`).
+. Refresh the OpenBiblio interface in your browser.  When you click on the help link, it should
+pop up a new window with your custom documentation.
+
