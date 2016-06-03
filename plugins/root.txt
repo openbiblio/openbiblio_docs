@@ -135,13 +135,13 @@ for three tasks:
 display to your user. 
 
 A basic plugin server consists of a require statement to get the necessary data and methods and a 
-switch statement to take care of the `$_REQUEST['mode']` variable. Here's a simple example:
+switch statement to take care of the `$_POST['mode']` variable. Here's a simple example:
 
 [source,php]
 ----
 <?php
 	require_once('../shared/common.php');
-	switch ($_REQUEST['mode']){
+	switch ($_POST['mode']){
 		case 1:
 			echo 'That\'s my favorite library too!';
 			break;
@@ -153,6 +153,10 @@ switch statement to take care of the `$_REQUEST['mode']` variable. Here's a simp
 			break;
 	}
 ----
+
+NOTE: If you would like to follow OpenBiblio style and serve up JSON from your Server to be processed
+by your JS file, be sure to use POST requests, rather than GET requests, to avoid the potential of
+Javascript Hijacking.
 
 If you would like to access data from the database, you should require the appropriate model from the
 model directory.  For example, if you'd like to use the Biblios model, you would include this in your
