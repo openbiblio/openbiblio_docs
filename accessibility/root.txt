@@ -1,0 +1,11 @@
+= Accessibility
+
+== Skipping navigation menus
+
+If you are using OpenBiblio with screenreader software, you may not be interested in listening to your software
+recite all of OpenBiblio's navigation links every time you move to a new page.  You can instead select the
+link called "Skip to main content," which will take you to the content that you are more interested, such as
+the catalog or circulation interface.
+
+You may also access this link using your keyboard using Tab key repeatedly.
+
