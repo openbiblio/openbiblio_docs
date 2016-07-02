@@ -1056,7 +1056,7 @@ display to your user.
 </li>
 </ol></div>
 <div class="paragraph"><p>A basic plugin server consists of a require statement to get the necessary data and methods and a
-switch statement to take care of the <code>$_REQUEST['mode']</code> variable. Here&#8217;s a simple example:</p></div>
+switch statement to take care of the <code>$_POST['mode']</code> variable. Here&#8217;s a simple example:</p></div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.8
 by Lorenzo Bettini
@@ -1064,7 +1064,7 @@ http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="color: #990000">&lt;?php</span>
         <span style="font-weight: bold"><span style="color: #000080">require_once</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'../shared/common.php'</span><span style="color: #990000">);</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">switch</span></span> <span style="color: #990000">(</span><span style="color: #009900">$_REQUEST</span><span style="color: #990000">[</span><span style="color: #FF0000">'mode'</span><span style="color: #990000">])</span><span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">switch</span></span> <span style="color: #990000">(</span><span style="color: #009900">$_POST</span><span style="color: #990000">[</span><span style="color: #FF0000">'mode'</span><span style="color: #990000">])</span><span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #993399">1</span><span style="color: #990000">:</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">echo</span></span> <span style="color: #FF0000">'That\'s my favorite library too!'</span><span style="color: #990000">;</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
@@ -1075,6 +1075,16 @@ http://www.gnu.org/software/src-highlite -->
                         <span style="font-weight: bold"><span style="color: #0000FF">echo</span></span> <span style="font-weight: bold"><span style="color: #000000">T</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'invalid mode'</span><span style="color: #990000">);</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">If you would like to follow OpenBiblio style and serve up JSON from your Server to be processed
+by your JS file, be sure to use POST requests, rather than GET requests, to avoid the potential of
+Javascript Hijacking.</td>
+</tr></table>
+</div>
 <div class="paragraph"><p>If you would like to access data from the database, you should require the appropriate model from the
 model directory.  For example, if you&#8217;d like to use the Biblios model, you would include this in your
 plugin_excitingPlugin/excitingSrvr.php:</p></div>
@@ -1149,7 +1159,7 @@ Turn on your plugin using Tools &#8594; Plugin Manager.
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2016-05-11 15:34:16 PDT
+ 2016-06-02 20:47:44 PDT
 </div>
 </div>
 </body>

@@ -817,8 +817,8 @@ fully compatible with PHP 7.  You are welcome to use OpenBiblio
 with PHP 7, but be aware that you may see
 warning messages.</p></div>
 <div class="paragraph"><p>You will need MySQL.  Not sure of version.</p></div>
-<div class="paragraph"><p>You will also need some Web server program.  OpenBiblio has been tested
-with both Apache and nginx.</p></div>
+<div class="paragraph"><p>You will also need some Web server program.  OpenBiblio currently only works with Apache or with FastCGI implementations on other
+Web server software.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_installing_openbiblio_1_0_on_a_windows_computer">Installing OpenBiblio 1.0 on a Windows computer</h3>
@@ -1129,6 +1129,71 @@ Install test data if you would like.
 <p>
 Log in to your new OpenBiblio system.  The default user is admin with password admin.
 </p>
+</li>
+</ol></div>
+<div class="paragraph"><p>To protect sensitive member data, we strongly encourage you to set up HTTPS,
+so that anybody who intercepts OpenBiblio data will see an encrypted jumble,
+rather than your members' information.</p></div>
+<div class="paragraph"><p>The following is extracted from "Ubuntu Unleashed", 2016 edition, Sams, pp 513 - 515.</p></div>
+<div class="paragraph"><p>All below assumes you are using Apache2 running on a Ubuntu server.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Enable the following module:
+  sudo a2enmod ssl
+</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>to configure Apache2 for HTTPS using the default configuration for testing:
+sudo a2ensite default-ssl
+and restart  using
+sudo service apache2 restart</code></pre>
+</div></div>
+</li>
+<li>
+<p>
+create a self-signed certificate and key
+  first generate a key
+  openssl genrsa -des3 -out server.key 2048
+</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>next a signing request (CSR)
+openssl req -new -key server.key -out server-csr</code></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>generate a certificate for 1 year (365 days) larger numbers are allowed - I use 36500!
+openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</code></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>copy to the certificate to a 'proper' location
+sudo cp server.crt /etc/ssl/certs/</code></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>copy the key to a proper location
+sudo cp server.key /etc/ssl/private/</code></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>edit apache2's default -ssl file /etc/apache2/sites-available/default-ssl to read as
+SSLEngine on
+SSLCertificateFile /etc/ssl/certs/server.crt
+SSLCertificateKeyFile /etc/ssl/private/server.key</code></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>to configure Apache2 to use this info
+sudo a2ensite default-ssl</code></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>Now restart Apache; be prepared to input the certificate's key password.
+Be sure to save this password/phrase, you will need it every time you restart Apache.
+sudo service apache2 restart</code></pre>
+</div></div>
 </li>
 </ol></div>
 </div>
@@ -2489,7 +2554,7 @@ display to your user.
 </li>
 </ol></div>
 <div class="paragraph"><p>A basic plugin server consists of a require statement to get the necessary data and methods and a
-switch statement to take care of the <code>$_REQUEST['mode']</code> variable. Here&#8217;s a simple example:</p></div>
+switch statement to take care of the <code>$_POST['mode']</code> variable. Here&#8217;s a simple example:</p></div>
 <div class="listingblock">
 <div class="content"><!-- Generator: GNU source-highlight 3.1.8
 by Lorenzo Bettini
@@ -2497,7 +2562,7 @@ http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="color: #990000">&lt;?php</span>
         <span style="font-weight: bold"><span style="color: #000080">require_once</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'../shared/common.php'</span><span style="color: #990000">);</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">switch</span></span> <span style="color: #990000">(</span><span style="color: #009900">$_REQUEST</span><span style="color: #990000">[</span><span style="color: #FF0000">'mode'</span><span style="color: #990000">])</span><span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">switch</span></span> <span style="color: #990000">(</span><span style="color: #009900">$_POST</span><span style="color: #990000">[</span><span style="color: #FF0000">'mode'</span><span style="color: #990000">])</span><span style="color: #FF0000">{</span>
                 <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #993399">1</span><span style="color: #990000">:</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">echo</span></span> <span style="color: #FF0000">'That\'s my favorite library too!'</span><span style="color: #990000">;</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
@@ -2508,6 +2573,16 @@ http://www.gnu.org/software/src-highlite -->
                         <span style="font-weight: bold"><span style="color: #0000FF">echo</span></span> <span style="font-weight: bold"><span style="color: #000000">T</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'invalid mode'</span><span style="color: #990000">);</span>
                         <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
         <span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">If you would like to follow OpenBiblio style and serve up JSON from your Server to be processed
+by your JS file, be sure to use POST requests, rather than GET requests, to avoid the potential of
+Javascript Hijacking.</td>
+</tr></table>
+</div>
 <div class="paragraph"><p>If you would like to access data from the database, you should require the appropriate model from the
 model directory.  For example, if you&#8217;d like to use the Biblios model, you would include this in your
 plugin_excitingPlugin/excitingSrvr.php:</p></div>
@@ -2591,6 +2666,74 @@ Go to Admin &#8594; Library settings. Set the character set to <em>utf8</em>.
 </p>
 </li>
 </ol></div>
+</div>
+<div class="sect2">
+<h3 id="_adding_a_link_to_your_system_documentation">Adding a link to your system documentation</h3>
+<div class="paragraph"><p>You can configure the "Help" link in OpenBiblio&#8217;s menu to link to any URL you would like.
+This defaults to the official OpenBiblio documentation, but you may wish to replace it with
+some help that is customized for users at your library.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">You will need access to the SQL database to do this; it has not yet been added to the
+end-user interface.</td>
+</tr></table>
+</div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Open up the SQL database using the interface of your choice (be it PhpMyAdmin, a command-line
+interface, or any other tool you prefer).
+</p>
+</li>
+<li>
+<p>
+Type <code>UPDATE settings SET value='https://myLibraryDocs.example.com' WHERE name='help_link'</code>
+(using your own URL instead of <code>https://myLibraryDocs.example.com</code>).
+</p>
+</li>
+<li>
+<p>
+Refresh the OpenBiblio interface in your browser.  When you click on the help link, it should
+pop up a new window with your custom documentation.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect2">
+<h3 id="_changing_the_timeout_length_on_hmac_requests">Changing the timeout length on HMAC requests</h3>
+<div class="paragraph"><p>OpenBiblio encrypts certain requests that might expose confidential member data.  Every time a
+user opens or refreshes a *Forms.php page that might expose such data, the clock starts ticking
+and they must make their requests before a certain number of minutes elapse.  This is to make
+sure that if the request falls into the wrong hands, the intruder will not have access to these
+data for very long.</p></div>
+<div class="paragraph"><p>You can set the number of minutes before sensitive requests time out to the value that works best
+for your library, based on factors like your workflow and security concerns.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Open up the SQL database using the interface of your choice (be it PhpMyAdmin, a command-line
+interface, or any other tool you prefer).
+</p>
+</li>
+<li>
+<p>
+Type <code>UPDATE settings SET value='5' WHERE name='hmac_timeout'</code>
+where 5 is the number of minutes before sensitive requests become invalid.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/tip.png" alt="Tip" />
+</td>
+<td class="content">If you would like to "turn off" this timeout feature (technically setting the expire time to
+28 days), set the value to 0.</td>
+</tr></table>
+</div>
 </div>
 </div>
 </div>

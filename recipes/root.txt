@@ -21,3 +21,22 @@ interface, or any other tool you prefer).
 . Refresh the OpenBiblio interface in your browser.  When you click on the help link, it should
 pop up a new window with your custom documentation.
 
+== Changing the timeout length on HMAC requests
+
+OpenBiblio encrypts certain requests that might expose confidential member data.  Every time a
+user opens or refreshes a *Forms.php page that might expose such data, the clock starts ticking
+and they must make their requests before a certain number of minutes elapse.  This is to make
+sure that if the request falls into the wrong hands, the intruder will not have access to these
+data for very long.
+
+You can set the number of minutes before sensitive requests time out to the value that works best
+for your library, based on factors like your workflow and security concerns.
+
+. Open up the SQL database using the interface of your choice (be it PhpMyAdmin, a command-line
+interface, or any other tool you prefer).
+. Type `UPDATE settings SET value='5' WHERE name='hmac_timeout'`
+where 5 is the number of minutes before sensitive requests become invalid.
+
+TIP: If you would like to "turn off" this timeout feature (technically setting the expire time to
+28 days), set the value to 0.
+

@@ -757,12 +757,84 @@ Go to Admin &#8594; Library settings. Set the character set to <em>utf8</em>.
 </ol></div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_adding_a_link_to_your_system_documentation">Adding a link to your system documentation</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>You can configure the "Help" link in OpenBiblio&#8217;s menu to link to any URL you would like.
+This defaults to the official OpenBiblio documentation, but you may wish to replace it with
+some help that is customized for users at your library.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">You will need access to the SQL database to do this; it has not yet been added to the
+end-user interface.</td>
+</tr></table>
+</div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Open up the SQL database using the interface of your choice (be it PhpMyAdmin, a command-line
+interface, or any other tool you prefer).
+</p>
+</li>
+<li>
+<p>
+Type <code>UPDATE settings SET value='https://myLibraryDocs.example.com' WHERE name='help_link'</code>
+(using your own URL instead of <code>https://myLibraryDocs.example.com</code>).
+</p>
+</li>
+<li>
+<p>
+Refresh the OpenBiblio interface in your browser.  When you click on the help link, it should
+pop up a new window with your custom documentation.
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_changing_the_timeout_length_on_hmac_requests">Changing the timeout length on HMAC requests</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>OpenBiblio encrypts certain requests that might expose confidential member data.  Every time a
+user opens or refreshes a *Forms.php page that might expose such data, the clock starts ticking
+and they must make their requests before a certain number of minutes elapse.  This is to make
+sure that if the request falls into the wrong hands, the intruder will not have access to these
+data for very long.</p></div>
+<div class="paragraph"><p>You can set the number of minutes before sensitive requests time out to the value that works best
+for your library, based on factors like your workflow and security concerns.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Open up the SQL database using the interface of your choice (be it PhpMyAdmin, a command-line
+interface, or any other tool you prefer).
+</p>
+</li>
+<li>
+<p>
+Type <code>UPDATE settings SET value='5' WHERE name='hmac_timeout'</code>
+where 5 is the number of minutes before sensitive requests become invalid.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">If you would like to "turn off" this timeout feature (technically setting the expire time to
+28 days), set the value to 0.</td>
+</tr></table>
+</div>
+</div>
+</div>
 </div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2016-05-11 15:34:16 PDT
+ 2016-07-02 10:34:34 PDT
 </div>
 </div>
 </body>

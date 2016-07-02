@@ -751,8 +751,8 @@ fully compatible with PHP 7.  You are welcome to use OpenBiblio
 with PHP 7, but be aware that you may see
 warning messages.</p></div>
 <div class="paragraph"><p>You will need MySQL.  Not sure of version.</p></div>
-<div class="paragraph"><p>You will also need some Web server program.  OpenBiblio has been tested
-with both Apache and nginx.</p></div>
+<div class="paragraph"><p>You will also need some Web server program.  OpenBiblio currently only works with Apache or with FastCGI implementations on other
+Web server software.</p></div>
 </div>
 </div>
 <div class="sect1">
@@ -1071,6 +1071,71 @@ Log in to your new OpenBiblio system.  The default user is admin with password a
 </p>
 </li>
 </ol></div>
+<div class="paragraph"><p>To protect sensitive member data, we strongly encourage you to set up HTTPS,
+so that anybody who intercepts OpenBiblio data will see an encrypted jumble,
+rather than your members' information.</p></div>
+<div class="paragraph"><p>The following is extracted from "Ubuntu Unleashed", 2016 edition, Sams, pp 513 - 515.</p></div>
+<div class="paragraph"><p>All below assumes you are using Apache2 running on a Ubuntu server.</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Enable the following module:
+  sudo a2enmod ssl
+</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>to configure Apache2 for HTTPS using the default configuration for testing:
+sudo a2ensite default-ssl
+and restart  using
+sudo service apache2 restart</code></pre>
+</div></div>
+</li>
+<li>
+<p>
+create a self-signed certificate and key
+  first generate a key
+  openssl genrsa -des3 -out server.key 2048
+</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>next a signing request (CSR)
+openssl req -new -key server.key -out server-csr</code></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>generate a certificate for 1 year (365 days) larger numbers are allowed - I use 36500!
+openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</code></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>copy to the certificate to a 'proper' location
+sudo cp server.crt /etc/ssl/certs/</code></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>copy the key to a proper location
+sudo cp server.key /etc/ssl/private/</code></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>edit apache2's default -ssl file /etc/apache2/sites-available/default-ssl to read as
+SSLEngine on
+SSLCertificateFile /etc/ssl/certs/server.crt
+SSLCertificateKeyFile /etc/ssl/private/server.key</code></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>to configure Apache2 to use this info
+sudo a2ensite default-ssl</code></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><code>Now restart Apache; be prepared to input the certificate's key password.
+Be sure to save this password/phrase, you will need it every time you restart Apache.
+sudo service apache2 restart</code></pre>
+</div></div>
+</li>
+</ol></div>
 </div>
 </div>
 </div>
@@ -1079,7 +1144,7 @@ Log in to your new OpenBiblio system.  The default user is admin with password a
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2016-05-11 15:34:16 PDT
+ 2016-07-02 10:13:29 PDT
 </div>
 </div>
 </body>

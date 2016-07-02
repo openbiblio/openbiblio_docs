@@ -14,12 +14,14 @@ warning messages.
 
 You will need MySQL.  Not sure of version.
 
-You will also need some Web server program.  OpenBiblio has been tested 
-with both Apache and nginx.
+You will also need some Web server program.  OpenBiblio currently only works with Apache or with FastCGI implementations on other
+Web server software.
 
 include::windows.txt[]
 
 include::linux-shared.txt[]
 
 include::linux.txt[]
+
+include::linux-https.txt[]
 
