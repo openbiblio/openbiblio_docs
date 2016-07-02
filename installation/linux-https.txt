@@ -1,0 +1,45 @@
+To protect sensitive member data, we strongly encourage you to set up HTTPS,
+so that anybody who intercepts OpenBiblio data will see an encrypted jumble,
+rather than your members' information.
+
+The following is extracted from "Ubuntu Unleashed", 2016 edition, Sams, pp 513 - 515.
+
+All below assumes you are using Apache2 running on a Ubuntu server.
+
+1. Enable the following module:
+  sudo a2enmod ssl
+  
+  to configure Apache2 for HTTPS using the default configuration for testing:
+  sudo a2ensite default-ssl
+  and restart  using
+  sudo service apache2 restart
+  
+2. create a self-signed certificate and key
+  first generate a key
+  openssl genrsa -des3 -out server.key 2048
+  
+  next a signing request (CSR)
+  openssl req -new -key server.key -out server-csr
+  
+  generate a certificate for 1 year (365 days) larger numbers are allowed - I use 36500!
+  openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+  
+  copy to the certificate to a 'proper' location
+  sudo cp server.crt /etc/ssl/certs/
+  
+  copy the key to a proper location
+  sudo cp server.key /etc/ssl/private/
+  
+  edit apache2's default -ssl file /etc/apache2/sites-available/default-ssl to read as
+  SSLEngine on
+  SSLCertificateFile /etc/ssl/certs/server.crt
+  SSLCertificateKeyFile /etc/ssl/private/server.key
+  
+  to configure Apache2 to use this info
+  sudo a2ensite default-ssl
+  
+  Now restart Apache; be prepared to input the certificate's key password. 
+  Be sure to save this password/phrase, you will need it every time you restart Apache.
+  sudo service apache2 restart
+  
+  
