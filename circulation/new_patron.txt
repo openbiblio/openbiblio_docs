@@ -1,0 +1,11 @@
+== Creating a new member
+
+. Click on Members, under the circulation menu.
+. Click "Add new member".
+. Enter the desired information.
+. Some people may use a name other than their legal name.  If this is the case,
+enter the name they prefer in the "First name" and "Last name" fields, and if
+it is necessary, enter their legal name into the "Legal first name" and/or
+"Legal last name" fields.  This will allow your library to retrieve information
+about this member using both versions of their name.
+

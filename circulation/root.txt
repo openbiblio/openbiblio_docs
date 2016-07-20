@@ -8,6 +8,8 @@ include::checkin.txt[]
 
 include::history.txt[]
 
+include::new_patron.txt[]
+
 == Holds
 
 You can place holds on items so you can check them out at a later time.

@@ -2,5 +2,7 @@
 === Retrieving a member's account.
 
 . Click on Circulation on the left side of the screen.
-. Enter a portion of the member's last name.  If you have member barcodes turned on, you may alternatively scan their barcode.
+. If you have member barcodes turned on, you may scan their barcode.
+. Otherwise, enter a portion of the member's last name.
+. Click on the patron you wish to retrieve.  If a patron goes by a name other than their legal name, both forms of their name will display in the list.
 
