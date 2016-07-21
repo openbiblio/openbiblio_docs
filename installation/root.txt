@@ -8,7 +8,7 @@ We also plan to test other versions of Windows, Ubuntu Linux 12.04, Debian Linux
 
 To install OpenBiblio, you will need PHP version 5.4 or higher.  OpenBiblio is fully compatible with PHP 7.
 
-You will need MySQL.  OpenBiblio has been tested with versions 5.4 and 5.7.
+You will need MySQL.  OpenBiblio has been tested with versions 5.5 and 5.7.
 
 You will also need some Web server program.  OpenBiblio has been tested with both Apache and nginx.
 Web server software.
