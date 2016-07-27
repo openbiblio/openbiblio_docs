@@ -18,6 +18,9 @@ This requires access to the files and a good UTF-8 text editor.
 
 . Create a new directory in the locale directory with the 2-character ISO 639-1 code for the language. For example, if you would like to do an
 Amharic translation, your directory would be called `am`.
++
+NOTE: OpenBiblio traditionally uses the 2-character ISO 639-1 code, but you may also use a 3-character scheme or custom string if your language isn't represented in ISO 639-1.
++
 . Create a PHP file called metadata.php. Make sure that the class name begins with the ISO 639-1 code for your language.
 +
 [source,php]
