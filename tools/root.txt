@@ -1,1 +1,5 @@
-Tools Menu
+This section is written for sysadmins who have access to several advanced tools, including
+
+. The tools menu in the OpenBiblio interface
+. The PHP codebase
+. The SQL database
