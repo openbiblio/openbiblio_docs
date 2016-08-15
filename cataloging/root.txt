@@ -56,6 +56,13 @@ checkbox. With this unselected, members will not be able to view your record.  Y
 
 include::item_cataloging.txt[]
 
+== Adding cover images to records
+
+You may add cover images to your records.  You may do this by uploading images from your computer or taking pictures using a webcam or other camera connected to your computer.
+
+If you turn on the OpenLibrary plugin, you may also use images hosted on OpenLibrary's remote servers.  This will spare your catalogers the effort of taking or uploading their
+own images.
+
 == Importing MARC records
 
 By default, the MARC record importer imports items as a "test load,"

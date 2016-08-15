@@ -745,13 +745,9 @@ asciidoc.install(2);
 <div class="sectionbody">
 <div class="paragraph"><p>We have tested OpenBiblio installation on Windows 7 and Ubuntu Linux 14.04.</p></div>
 <div class="paragraph"><p>We also plan to test other versions of Windows, Ubuntu Linux 12.04, Debian Linux, Fedora Linux, Mac OSX, and CentOS Linux.</p></div>
-<div class="paragraph"><p>To install OpenBiblio, you will need PHP version 5.4 or higher.
-We are actively revising the codebase to make OpenBiblio
-fully compatible with PHP 7.  You are welcome to use OpenBiblio
-with PHP 7, but be aware that you may see
-warning messages.</p></div>
-<div class="paragraph"><p>You will need MySQL.  Not sure of version.</p></div>
-<div class="paragraph"><p>You will also need some Web server program.  OpenBiblio currently only works with Apache or with FastCGI implementations on other
+<div class="paragraph"><p>To install OpenBiblio, you will need PHP version 5.4 or higher.  OpenBiblio is fully compatible with PHP 7.</p></div>
+<div class="paragraph"><p>You will need MySQL.  OpenBiblio has been tested with versions 5.5 and 5.7.</p></div>
+<div class="paragraph"><p>You will also need some Web server program.  OpenBiblio has been tested with both Apache and nginx.
 Web server software.</p></div>
 </div>
 </div>
@@ -944,7 +940,10 @@ Download the Filezilla FTP program
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt>sudo apt-get install apache2 php5 mysql-server yaz php5-dev php5-mysql php-pear libyaz4-dev unzip</tt></pre></div></div>
+<pre><tt><span style="color: #993399">1</span><span style="color: #990000">.</span> sudo apt-get install apache2 php5 mysql-server yaz php5-dev php5-mysql php-pear libyaz4-dev unzip
+<span style="color: #993399">2</span><span style="color: #990000">.</span> use your favorite editor to add <span style="color: #FF0000">"extension=yaz.so"</span> to /etc/php/apache/php<span style="color: #990000">.</span>ini
+   TIP<span style="color: #990000">:</span> search <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #FF0000">'extension='</span> to find the right location
+<span style="color: #993399">3</span><span style="color: #990000">.</span> sudo pecl install yaz</tt></pre></div></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1144,7 +1143,7 @@ sudo service apache2 restart</code></pre>
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2016-07-02 10:13:29 PDT
+ 2016-08-15 16:02:49 PDT
 </div>
 </div>
 </body>

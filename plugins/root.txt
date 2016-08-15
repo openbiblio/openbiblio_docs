@@ -28,6 +28,8 @@ include::transUtils.txt[]
 
 include::callNoUtils.txt[]
 
+include::onlineFotos.txt[]
+
 
 == Creating a new plugin
 

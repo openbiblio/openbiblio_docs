@@ -811,13 +811,9 @@ you can contribute your code, test it, and contribute it back to the main reposi
 <h3 id="_system_requirements">System requirements</h3>
 <div class="paragraph"><p>We have tested OpenBiblio installation on Windows 7 and Ubuntu Linux 14.04.</p></div>
 <div class="paragraph"><p>We also plan to test other versions of Windows, Ubuntu Linux 12.04, Debian Linux, Fedora Linux, Mac OSX, and CentOS Linux.</p></div>
-<div class="paragraph"><p>To install OpenBiblio, you will need PHP version 5.4 or higher.
-We are actively revising the codebase to make OpenBiblio
-fully compatible with PHP 7.  You are welcome to use OpenBiblio
-with PHP 7, but be aware that you may see
-warning messages.</p></div>
-<div class="paragraph"><p>You will need MySQL.  Not sure of version.</p></div>
-<div class="paragraph"><p>You will also need some Web server program.  OpenBiblio currently only works with Apache or with FastCGI implementations on other
+<div class="paragraph"><p>To install OpenBiblio, you will need PHP version 5.4 or higher.  OpenBiblio is fully compatible with PHP 7.</p></div>
+<div class="paragraph"><p>You will need MySQL.  OpenBiblio has been tested with versions 5.5 and 5.7.</p></div>
+<div class="paragraph"><p>You will also need some Web server program.  OpenBiblio has been tested with both Apache and nginx.
 Web server software.</p></div>
 </div>
 <div class="sect2">
@@ -1004,7 +1000,10 @@ Download the Filezilla FTP program
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
-<pre><tt>sudo apt-get install apache2 php5 mysql-server yaz php5-dev php5-mysql php-pear libyaz4-dev unzip</tt></pre></div></div>
+<pre><tt><span style="color: #993399">1</span><span style="color: #990000">.</span> sudo apt-get install apache2 php5 mysql-server yaz php5-dev php5-mysql php-pear libyaz4-dev unzip
+<span style="color: #993399">2</span><span style="color: #990000">.</span> use your favorite editor to add <span style="color: #FF0000">"extension=yaz.so"</span> to /etc/php/apache/php<span style="color: #990000">.</span>ini
+   TIP<span style="color: #990000">:</span> search <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #FF0000">'extension='</span> to find the right location
+<span style="color: #993399">3</span><span style="color: #990000">.</span> sudo pecl install yaz</tt></pre></div></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1457,6 +1456,8 @@ be distributed.
 <em>Default</em> - If this is set to <em>Y</em>, the cataloging module
 will default to the current collection.
 </p>
+</li>
+</ul></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1467,12 +1468,65 @@ be default, or else the cataloging module will run into
 errors.</td>
 </tr></table>
 </div>
+<div class="sect4">
+<h5 id="_circulating_collections">Circulating collections</h5>
+<div class="paragraph"><p>Circulating collections have a number of other settings,
+usually associated with a specific <em>due date calculator.</em></p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<em>Due date calculator</em> is a specific procedure to determine
+when items in your collection should be due back to the library.
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+<em>simple</em>: this due date calculator will simply add the
+requested number of days and minutes to the current date and time.
+If the library&#8217;s calendar indicates that the library will be closed
+on that day, it will extend the due date to 11:59 p.m. on the
+next available open day.
+</p>
+</li>
+<li>
+<p>
+<em>at midnight</em>: this calculator works very similarly to the <em>simple</em>
+calculator, except that it <em>always</em> extends due dates to 11:59 p.m.
+This calculator functions very similarly to the circulation module
+in OpenBiblio 0.7.x, and is the best choice for collections that
+you&#8217;d like to circulate for a certain number of days.
+</p>
+</li>
+<li>
+<p>
+<em>before we close</em>: this calculator is for items that should return
+to the library at closing time.  Items will be due after the specified
+number of minutes or at closing time, whichever comes first. If you
+specify the Pre-closing padding, items will be due the specified number
+of minutes before the library closes, so that members don&#8217;t try to
+return the items as you are trying to close the library.
+</p>
+</li>
+<li>
+<p>
+<em>ask me</em>: anytime an item in this collection circulates, the staff
+member will manually select the due date and time.  This can be useful
+for interlibrary loan collections, where due dates are rarely standardized.
+</p>
+</li>
+</ul></div>
 </li>
 <li>
 <p>
 <em>Days due back</em> - the length of the loan period in days for items
-from this collection.  You may set this to 0 if you would
-not like items to circulate.
+from this collection.
+</p>
+</li>
+<li>
+<p>
+<em>Minutes due back</em> - the length of the loan period in minutes for items
+from this collection. You may combine this with the <em>days due back</em> field,
+if you would like (e.g. items can be checked out for 3 days and 45 minutes).
 </p>
 </li>
 <li>
@@ -1481,7 +1535,33 @@ not like items to circulate.
 overdue.
 </p>
 </li>
+<li>
+<p>
+<em>Important date</em> - a specific date that OpenBiblio should take into account
+when calculating a due date and time.  This might be the end of a term at school.
+</p>
+</li>
+<li>
+<p>
+<em>Important date purpose</em> - what OpenBiblio should due with the important date.
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+<em>ceiling date</em> - OpenBiblio will not calculate any dates that fall after the
+important date.
+</p>
+</li>
+<li>
+<p>
+<em>specific date</em> - OpenBiblio will always use the important date as the due
+date.
+</p>
+</li>
 </ul></div>
+</li>
+</ul></div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_managing_displayed_fields">Managing displayed fields</h4>
@@ -1710,6 +1790,14 @@ If you enter an invalid charset or leave this field blank, it will default to th
 Create a new directory in the locale directory with the 2-character ISO 639-1 code for the language. For example, if you would like to do an
 Amharic translation, your directory would be called <code>am</code>.
 </p>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./images/icons/note.png" alt="Note" />
+</td>
+<td class="content">OpenBiblio traditionally uses the 2-character ISO 639-1 code, but you may also use a 3-character scheme or custom string if your language isn&#8217;t represented in ISO 639-1.</td>
+</tr></table>
+</div>
 </li>
 <li>
 <p>
@@ -2084,6 +2172,12 @@ This feature requires a webcam or equiv. Enabling this feature will also cause t
 to formally allow the browser to take photos - this is a HTML5 <em>feature</em> designed to ensure user privacy.
 Once photos are available, they will show up on various reports, biblio lists, etc.</p></div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_adding_cover_images_to_records">Adding cover images to records</h3>
+<div class="paragraph"><p>You may add cover images to your records.  You may do this by uploading images from your computer or taking pictures using a webcam or other camera connected to your computer.</p></div>
+<div class="paragraph"><p>If you turn on the OpenLibrary plugin, you may also use images hosted on OpenLibrary&#8217;s remote servers.  This will spare your catalogers the effort of taking or uploading their
+own images.</p></div>
 </div>
 <div class="sect2">
 <h3 id="_importing_marc_records">Importing MARC records</h3>
@@ -2471,6 +2565,10 @@ posting proposed call numbers as needed.
 <h5 id="_add_call_numbers_to_records">Add call numbers to records</h5>
 <div class="paragraph"><p>This function will post the proposed call numbers.</p></div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_online_photos_openlibrary">Online photos (OpenLibrary)</h4>
+<div class="paragraph"><p>This plugin takes cover images from the OpenLibrary project.</p></div>
 </div>
 </div>
 <div class="sect2">
