@@ -12,7 +12,10 @@ On Ubuntu 14.04:
 
 [source,bash]
 ----
-sudo apt-get install apache2 php5 mysql-server yaz php5-dev php5-mysql php-pear libyaz4-dev unzip
+1. sudo apt-get install apache2 php5 mysql-server yaz php5-dev php5-mysql php-pear libyaz4-dev unzip
+2. use your favorite editor to add "extension=yaz.so" to /etc/php/apache/php.ini 
+   TIP: search for 'extension=' to find the right location
+3. sudo pecl install yaz
 ----
 
 TIP: This will prompt you to choose a root password for MySQL.  Make sure it is a secure one!
