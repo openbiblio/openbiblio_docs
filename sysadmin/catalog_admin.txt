@@ -51,17 +51,51 @@ whether items in this collection should circulate or
 be distributed.
 * _Default_ - If this is set to _Y_, the cataloging module
 will default to the current collection.
-+
+
 NOTE: You should be careful to only set one collection to
 be default, or else the cataloging module will run into
 errors.
-+
+
+==== Circulating collections
+
+Circulating collections have a number of other settings,
+usually associated with a specific _due date calculator._
+
+* _Due date calculator_ is a specific procedure to determine
+when items in your collection should be due back to the library.
+** _simple_: this due date calculator will simply add the
+requested number of days and minutes to the current date and time.
+If the library's calendar indicates that the library will be closed
+on that day, it will extend the due date to 11:59 p.m. on the
+next available open day.
+** _at midnight_: this calculator works very similarly to the _simple_
+calculator, except that it _always_ extends due dates to 11:59 p.m.
+This calculator functions very similarly to the circulation module
+in OpenBiblio 0.7.x, and is the best choice for collections that
+you'd like to circulate for a certain number of days.
+** _before we close_: this calculator is for items that should return
+to the library at closing time.  Items will be due after the specified
+number of minutes or at closing time, whichever comes first. If you
+specify the Pre-closing padding, items will be due the specified number
+of minutes before the library closes, so that members don't try to
+return the items as you are trying to close the library.
+** _ask me_: anytime an item in this collection circulates, the staff
+member will manually select the due date and time.  This can be useful
+for interlibrary loan collections, where due dates are rarely standardized.
 * _Days due back_ - the length of the loan period in days for items
-from this collection.  You may set this to 0 if you would
-not like items to circulate.
+from this collection.
+* _Minutes due back_ - the length of the loan period in minutes for items
+from this collection. You may combine this with the _days due back_ field,
+if you would like (e.g. items can be checked out for 3 days and 45 minutes).
 * _Daily late fee_ - The overdue fee for each day an item is held
 overdue.
-
+* _Important date_ - a specific date that OpenBiblio should take into account
+when calculating a due date and time.  This might be the end of a term at school.
+* _Important date purpose_ - what OpenBiblio should due with the important date.
+** _ceiling date_ - OpenBiblio will not calculate any dates that fall after the
+important date.
+** _specific date_ - OpenBiblio will always use the important date as the due
+date.
 
 
 

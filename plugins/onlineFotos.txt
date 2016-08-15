@@ -1,0 +1,4 @@
+=== Online photos (OpenLibrary)
+
+This plugin takes cover images from the OpenLibrary project.
+
