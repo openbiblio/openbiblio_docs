@@ -20,6 +20,17 @@ On Ubuntu 14.04:
 
 TIP: This will prompt you to choose a root password for MySQL.  Make sure it is a secure one!
 
+On Ubuntu 16.04:
+
+[source,bash]
+----
+1. sudo apt-get install apache2 php mysql-server yaz php-dev php-mysql php-pear libyaz4-dev unzip
+2. use your favorite editor to add "extension=yaz.so" to /etc/php/apache/php.ini 
+   TIP: search for 'extension=' to find the right location
+3. sudo pecl install yaz
+----
+
+TIP: This will prompt you to choose a root password for MySQL.  Make sure it is a secure one!
 
 On Fedora 21:
 
