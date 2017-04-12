@@ -941,11 +941,7 @@ posting proposed call numbers as needed.
 Create a new directory that begins with the word plugin, followed by an underscore, followed by the name of your plugin.  In UNIX systems, you might type something like this:
 </p>
 <div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt>mkdir plugin_excitingPlugin</tt></pre></div></div>
+<div class="content"></div></div>
 </li>
 <li>
 <p>
@@ -965,32 +961,7 @@ Create three PHP files in the directory: a JS file, a Srvr file, and a Forms fil
 basic UI, some HTML form markup, and a section to display results and messages.
 Here&#8217;s a simple example:</p></div>
 <div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #990000">&lt;?php</span>
-  <span style="font-weight: bold"><span style="color: #000080">require_once</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"../shared/common.php"</span><span style="color: #990000">);</span>
-
-  <span style="color: #009900">$tab</span> <span style="color: #990000">=</span> <span style="color: #FF0000">"tools"</span><span style="color: #990000">;</span>
-  <span style="color: #009900">$nav</span> <span style="color: #990000">=</span> <span style="color: #FF0000">"ExcitingMgr"</span><span style="color: #990000">;</span>
-
-  <span style="font-weight: bold"><span style="color: #000080">require_once</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">REL</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">__FILE__</span></span><span style="color: #990000">,</span> <span style="color: #FF0000">"../shared/logincheck.php"</span><span style="color: #990000">));</span>
-  Page<span style="color: #990000">::</span><span style="font-weight: bold"><span style="color: #000000">header</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">array</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'nav'</span><span style="color: #990000">=&gt;</span><span style="color: #009900">$tab</span><span style="color: #990000">.</span><span style="color: #FF0000">'/'</span><span style="color: #990000">.</span><span style="color: #009900">$nav</span><span style="color: #990000">,</span> <span style="color: #FF0000">'title'</span><span style="color: #990000">=&gt;</span><span style="color: #FF0000">''</span><span style="color: #990000">));</span>
-
-<span style="color: #990000">?&gt;</span>
-<span style="font-weight: bold"><span style="color: #0000FF">&lt;h1</span></span> <span style="color: #009900">id</span><span style="color: #990000">=</span><span style="color: #FF0000">"pageHdr"</span> <span style="color: #009900">class</span><span style="color: #990000">=</span><span style="color: #FF0000">"title"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span><span style="color: #990000">&lt;?php</span> <span style="font-weight: bold"><span style="color: #0000FF">echo</span></span> <span style="font-weight: bold"><span style="color: #000000">T</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"excitingMgr"</span><span style="color: #990000">);</span> <span style="color: #990000">?&gt;</span><span style="font-weight: bold"><span style="color: #0000FF">&lt;/h1&gt;</span></span>
-    <span style="font-weight: bold"><span style="color: #0000FF">&lt;section&gt;</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">&lt;fieldset</span></span> <span style="color: #009900">id</span><span style="color: #990000">=</span><span style="color: #FF0000">"exciting"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
-            <span style="font-weight: bold"><span style="color: #0000FF">&lt;label</span></span> <span style="color: #009900">for</span><span style="color: #990000">=</span><span style="color: #FF0000">"site_cd"</span> <span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>Choose your favorite library:<span style="font-weight: bold"><span style="color: #0000FF">&lt;select</span></span> <span style="color: #009900">id</span><span style="color: #990000">=</span><span style="color: #FF0000">"site_cd"</span> <span style="font-weight: bold"><span style="color: #0000FF">&gt;&lt;/select&gt;&lt;/label&gt;</span></span>
-            <span style="font-weight: bold"><span style="color: #0000FF">&lt;input</span></span> <span style="color: #009900">type</span><span style="color: #990000">=</span><span style="color: #FF0000">"button"</span> <span style="color: #009900">id</span><span style="color: #990000">=</span><span style="color: #FF0000">"showResultsBtn"</span> <span style="color: #009900">value</span><span style="color: #990000">=</span><span style="color: #FF0000">"Show results"</span> <span style="font-weight: bold"><span style="color: #0000FF">/&gt;</span></span>
-        <span style="font-weight: bold"><span style="color: #0000FF">&lt;/fieldset&gt;</span></span>
-    <span style="font-weight: bold"><span style="color: #0000FF">&lt;/section&gt;</span></span>
-    <span style="font-weight: bold"><span style="color: #0000FF">&lt;div</span></span> <span style="color: #009900">id</span><span style="color: #990000">=</span><span style="color: #FF0000">"rslts"</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;&lt;/div&gt;</span></span>
-
-<span style="color: #990000">&lt;?php</span>
-<span style="font-weight: bold"><span style="color: #000080">require_once</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">REL</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">__FILE__</span></span><span style="color: #990000">,</span> <span style="color: #FF0000">"excitingJs.php"</span><span style="color: #990000">));</span>
-<span style="color: #990000">?&gt;</span></tt></pre></div></div>
+<div class="content"></div></div>
 </div>
 <div class="sect3">
 <h4 id="_create_a_plugin_js_file">Create a plugin JS file</h4>
@@ -1000,42 +971,7 @@ of your query from the server.</p></div>
 <div class="paragraph"><p>A basic JS file consists of functions that capture data from the user and send it to the server file(s).
 Here&#8217;s a simple example:</p></div>
 <div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">&lt;script</span></span> <span style="color: #009900">language</span><span style="color: #990000">=</span><span style="color: #FF0000">"JavaScript"</span> <span style="color: #009900">defer</span><span style="font-weight: bold"><span style="color: #0000FF">&gt;</span></span>
-<span style="color: #FF0000">"use strict"</span><span style="color: #990000">;</span>
-
-<span style="font-weight: bold"><span style="color: #0000FF">var</span></span> excite <span style="color: #990000">=</span> <span style="color: #FF0000">{</span>
-        init<span style="color: #990000">:</span> <span style="font-weight: bold"><span style="color: #0000FF">function</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                excite<span style="color: #990000">.</span>url <span style="color: #990000">=</span> <span style="color: #FF0000">'excitingSrvr.php'</span><span style="color: #990000">;</span>
-                excite<span style="color: #990000">.</span>listSrvr <span style="color: #990000">=</span> <span style="color: #FF0000">"../shared/listSrvr.php"</span><span style="color: #990000">;</span>
-                excite<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">fetchSiteList</span></span><span style="color: #990000">();</span>
-
-                $<span style="color: #990000">(</span><span style="color: #FF0000">'#showResultsBtn'</span><span style="color: #990000">).</span><span style="font-weight: bold"><span style="color: #000000">on</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'click'</span><span style="color: #990000">,</span><span style="font-weight: bold"><span style="color: #0000FF">null</span></span><span style="color: #990000">,</span>excite<span style="color: #990000">.</span>doSendUserData<span style="color: #990000">);</span>
-        <span style="color: #FF0000">}</span><span style="color: #990000">,</span>
-        fetchSiteList<span style="color: #990000">:</span> <span style="font-weight: bold"><span style="color: #0000FF">function</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                $<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">getJSON</span></span><span style="color: #990000">(</span>excite<span style="color: #990000">.</span>listSrvr<span style="color: #990000">,</span><span style="color: #FF0000">{</span>mode<span style="color: #990000">:</span><span style="color: #FF0000">'getSiteList'</span><span style="color: #FF0000">}</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #0000FF">function</span></span><span style="color: #990000">(</span>data<span style="color: #990000">)</span><span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">var</span></span> html <span style="color: #990000">=</span> <span style="color: #FF0000">''</span><span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">for</span></span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">var</span></span> n <span style="font-weight: bold"><span style="color: #0000FF">in</span></span> data<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                    html<span style="color: #990000">+=</span> <span style="color: #FF0000">'&lt;option value="'</span><span style="color: #990000">+</span>n<span style="color: #990000">+</span><span style="color: #FF0000">'"&gt;'</span><span style="color: #990000">+</span>data<span style="color: #990000">[</span>n<span style="color: #990000">]+</span><span style="color: #FF0000">'&lt;/option&gt;'</span><span style="color: #990000">;</span>
-                <span style="color: #FF0000">}</span>
-                $<span style="color: #990000">(</span><span style="color: #FF0000">'#site_cd'</span><span style="color: #990000">).</span><span style="font-weight: bold"><span style="color: #000000">html</span></span><span style="color: #990000">(</span>html<span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span><span style="color: #990000">);</span>
-        <span style="color: #FF0000">}</span><span style="color: #990000">,</span>
-        doSendUserData<span style="color: #990000">:</span> <span style="font-weight: bold"><span style="color: #0000FF">function</span></span> <span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                $<span style="color: #990000">.</span><span style="font-weight: bold"><span style="color: #000000">post</span></span><span style="color: #990000">(</span>excite<span style="color: #990000">.</span>url<span style="color: #990000">,</span> <span style="color: #FF0000">{</span><span style="color: #FF0000">'mode'</span><span style="color: #990000">:</span>$<span style="color: #990000">(</span><span style="color: #FF0000">"#site_cd"</span><span style="color: #990000">).</span><span style="font-weight: bold"><span style="color: #000000">val</span></span><span style="color: #990000">()</span><span style="color: #FF0000">}</span><span style="color: #990000">,</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">function</span></span> <span style="color: #990000">(</span>response<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                                $<span style="color: #990000">(</span><span style="color: #FF0000">'#rslts'</span><span style="color: #990000">).</span><span style="font-weight: bold"><span style="color: #000000">html</span></span><span style="color: #990000">(</span>response<span style="color: #990000">);</span>
-                                $<span style="color: #990000">(</span><span style="color: #FF0000">'#rslts'</span><span style="color: #990000">).</span><span style="font-weight: bold"><span style="color: #000000">show</span></span><span style="color: #990000">();</span>
-                <span style="color: #FF0000">}</span><span style="color: #990000">);</span>
-
-        <span style="color: #FF0000">}</span><span style="color: #990000">,</span>
-<span style="color: #FF0000">}</span><span style="color: #990000">;</span>
-$<span style="color: #990000">(</span>document<span style="color: #990000">).</span><span style="font-weight: bold"><span style="color: #000000">ready</span></span><span style="color: #990000">(</span>excite<span style="color: #990000">.</span>init<span style="color: #990000">);</span>
-
-<span style="font-weight: bold"><span style="color: #0000FF">&lt;/script&gt;</span></span></tt></pre></div></div>
+<div class="content"></div></div>
 </div>
 <div class="sect3">
 <h4 id="_create_a_plugin_server">Create a plugin server</h4>
@@ -1062,23 +998,7 @@ display to your user.
 <div class="paragraph"><p>A basic plugin server consists of a require statement to get the necessary data and methods and a
 switch statement to take care of the <code>$_POST['mode']</code> variable. Here&#8217;s a simple example:</p></div>
 <div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #990000">&lt;?php</span>
-        <span style="font-weight: bold"><span style="color: #000080">require_once</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'../shared/common.php'</span><span style="color: #990000">);</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">switch</span></span> <span style="color: #990000">(</span><span style="color: #009900">$_POST</span><span style="color: #990000">[</span><span style="color: #FF0000">'mode'</span><span style="color: #990000">])</span><span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #993399">1</span><span style="color: #990000">:</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">echo</span></span> <span style="color: #FF0000">'That\'s my favorite library too!'</span><span style="color: #990000">;</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">case</span></span> <span style="color: #993399">2</span><span style="color: #990000">:</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">echo</span></span> <span style="color: #FF0000">'That library is pretty good.'</span><span style="color: #990000">;</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">default</span></span><span style="color: #990000">:</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">echo</span></span> <span style="font-weight: bold"><span style="color: #000000">T</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'invalid mode'</span><span style="color: #990000">);</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">break</span></span><span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="content"></div></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
@@ -1093,12 +1013,7 @@ Javascript Hijacking.</td>
 model directory.  For example, if you&#8217;d like to use the Biblios model, you would include this in your
 plugin_excitingPlugin/excitingSrvr.php:</p></div>
 <div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt>require_once('../model/Biblios.php');
-$bib = new Biblios;</tt></pre></div></div>
+<div class="content"></div></div>
 <div class="paragraph"><p>You can then access all those great methods and data through the <code>$bib</code> object.</p></div>
 </div>
 </div>
@@ -1110,23 +1025,14 @@ $bib = new Biblios;</tt></pre></div></div>
 Create a new directory inside the plugins directory with the name of your plugin.  In UNIX systems, you might type something like this:
 </p>
 <div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt>mkdir plugins/excitingPlugin</tt></pre></div></div>
+<div class="content"></div></div>
 </li>
 <li>
 <p>
 Create a file within this new directory called nav.nav
 </p>
 <div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #990000">&lt;?php</span>
-Nav<span style="color: #990000">::</span><span style="font-weight: bold"><span style="color: #000000">node</span></span><span style="color: #990000">(</span><span style="color: #FF0000">'tools/excitingPlugin'</span><span style="color: #990000">,</span> <span style="color: #FF0000">'Exciting Plugin'</span><span style="color: #990000">,</span> <span style="color: #FF0000">'../plugin_excitingPlugin/excitingForms.php'</span><span style="color: #990000">);</span></tt></pre></div></div>
+<div class="content"></div></div>
 </li>
 <li>
 <p>

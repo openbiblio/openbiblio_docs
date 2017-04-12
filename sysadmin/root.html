@@ -1355,30 +1355,7 @@ Amharic translation, your directory would be called <code>am</code>.
 Create a PHP file called metadata.php. Make sure that the class name begins with the ISO 639-1 code for your language.
 </p>
 <div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1.8
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #990000">&lt;?php</span>
-<span style="font-weight: bold"><span style="color: #0000FF">class</span></span> amMetaData <span style="color: #FF0000">{</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">public</span></span> <span style="font-weight: bold"><span style="color: #0000FF">function</span></span> <span style="font-weight: bold"><span style="color: #000000">__construct</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
-                <span style="color: #009900">$this</span><span style="color: #990000">-&gt;</span>locale_description <span style="color: #990000">=</span> <span style="color: #FF0000">"Amharic"</span><span style="color: #990000">;</span>
-        <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">function</span></span> <span style="font-weight: bold"><span style="color: #000000">pluralForm</span></span><span style="color: #990000">(</span><span style="color: #009900">$n</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="color: #009900">$n</span> <span style="color: #990000">==</span> <span style="color: #993399">1</span> <span style="font-weight: bold"><span style="color: #0000FF">or</span></span> <span style="color: #009900">$n</span> <span style="color: #990000">==</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #FF0000">'singular'</span><span style="color: #990000">;</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="color: #FF0000">'plural'</span><span style="color: #990000">;</span>
-                <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-        <span style="font-weight: bold"><span style="color: #0000FF">function</span></span> <span style="font-weight: bold"><span style="color: #000000">moneyFormat</span></span><span style="color: #990000">(</span><span style="color: #009900">$amount</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                <span style="font-weight: bold"><span style="color: #0000FF">if</span></span> <span style="color: #990000">(</span><span style="color: #009900">$amount</span> <span style="color: #990000">&lt;</span> <span style="color: #993399">0</span><span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #000000">sprintf</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"(-%.br)"</span><span style="color: #990000">,</span> <span style="font-weight: bold"><span style="color: #000000">abs</span></span><span style="color: #990000">(</span><span style="color: #009900">$amount</span><span style="color: #990000">));</span>
-                <span style="color: #FF0000">}</span> <span style="font-weight: bold"><span style="color: #0000FF">else</span></span> <span style="color: #FF0000">{</span>
-                        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> <span style="font-weight: bold"><span style="color: #000000">sprintf</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"%.br"</span><span style="color: #990000">,</span> <span style="color: #009900">$amount</span><span style="color: #990000">);</span>
-                <span style="color: #FF0000">}</span>
-        <span style="color: #FF0000">}</span>
-<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="content"></div></div>
 </li>
 <li>
 <p>
