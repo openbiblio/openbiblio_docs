@@ -21,3 +21,16 @@ include::linux.txt[]
 
 include::linux-https.txt[]
 
+== Initial configuration
+
+After you successfully install OpenBiblio, check to make sure that the following areas are configured correctly:
+
+1. Tools -> System Settings
+2. Tools -> Web Server Information.  In this display, search (Ctrl-F) for 'yaz'. If not found make a note to install YAZ asap.
+3. Admin -> Staff Admin. Add additional people as needed and choose appropriate Roles and Start Page.
+4. Admin -> Library Settings
+5. Admin -> Collections. Select your most used collection (e.g. Non-Fiction) and make it the default for any later pull-down lists.
+6. Admin -> Media Types. Select your most used Media (e.g. Books) and make it the default for any later pull-down lists.
+7. Admin -> Open Hours. Make appropriate entries. this information will appear on the OPAC screens, and may affect how materials circulate.
+8. Admin -> Sites. If you have multiple sites, select the default for pull down lists
+9. Admin -> States. If your state, province, etc. is not present, add it now.
